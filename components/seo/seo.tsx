@@ -1,22 +1,29 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import path from 'path-browserify';
+import path from "path-browserify";
+import React from "react";
+import Helmet from "react-helmet";
 
-import defaultImage from '../../images/website-default-image.jpg';
-import { metadata } from '../../constants/metadata';
+import { metadata } from "../../constants/metadata";
+import defaultImage from "../../images/website-default-image.jpg";
 
-interface SEOProps {
+type SEOProps = {
   description?: string;
   lang?: string;
   title?: string;
   image?: string;
-}
+};
 
-export const SEO = ({ description, lang, title, image }: SEOProps): JSX.Element => {
-  const { siteUrl, title: defaultTitle, description: defaultDescription, author } = metadata;
+export const SEO = ({ description, lang, title, image }: SEOProps) => {
+  const {
+    siteUrl,
+    title: defaultTitle,
+    description: defaultDescription,
+    author,
+  } = metadata;
 
   const metaDescription = description || defaultDescription;
-  const metaTitle = title ? `${title} | ${defaultTitle}` : `Welcome | ${defaultTitle}`;
+  const metaTitle = title
+    ? `${title} | ${defaultTitle}`
+    : `Welcome | ${defaultTitle}`;
   const metaImage = image || `${siteUrl}${path.resolve(defaultImage.src)}`;
 
   return (
@@ -25,52 +32,52 @@ export const SEO = ({ description, lang, title, image }: SEOProps): JSX.Element 
       title={metaTitle}
       meta={[
         {
-          name: 'description',
+          name: "description",
           content: metaDescription,
         },
         {
-          property: 'og:title',
+          property: "og:title",
           content: title,
         },
         {
-          property: 'og:description',
+          property: "og:description",
           content: metaDescription,
         },
         {
-          name: 'og:image',
+          name: "og:image",
           content: metaImage,
         },
         {
-          property: 'og:type',
-          content: 'website',
+          property: "og:type",
+          content: "website",
         },
         {
-          name: 'twitter:card',
-          content: 'summary_large_image',
+          name: "twitter:card",
+          content: "summary_large_image",
         },
         {
-          name: 'twitter:creator',
+          name: "twitter:creator",
           content: author,
         },
         {
-          name: 'twitter:site',
+          name: "twitter:site",
           content: author,
         },
         {
-          name: 'twitter:title',
+          name: "twitter:title",
           content: title,
         },
         {
-          name: 'twitter:description',
+          name: "twitter:description",
           content: metaDescription,
         },
         {
-          name: 'twitter:image',
+          name: "twitter:image",
           content: metaImage,
         },
         {
-          name: 'og:site_name',
-          content: 'sebastianhamalainen.com',
+          name: "og:site_name",
+          content: "sebastianhamalainen.com",
         },
       ]}
     />

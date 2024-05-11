@@ -1,5 +1,5 @@
-import { monthNames } from '../constants/months';
-import { addLeadingZero } from './addLeadingZero';
+import { monthNames } from "../constants/months";
+import { addLeadingZero } from "./addLeadingZero";
 
 export const formatDate = (date: Date): string => {
   const dateNumber = addLeadingZero(date.getDate());

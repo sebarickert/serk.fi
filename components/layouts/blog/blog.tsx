@@ -1,0 +1,42 @@
+"use client";
+
+import { BlogTeaser } from "@/blocks/blog-teaser/blog-teaser";
+import { Container } from "@/blocks/container/container";
+import { Hero } from "@/blocks/hero/hero";
+import { HeroLead } from "@/blocks/hero/hero.lead";
+import { ArticleDto } from "@/types/ArticleDto";
+import { PageDto } from "@/types/PageDto";
+
+type BlogProps = {
+  page: PageDto;
+  articles: ArticleDto[];
+};
+
+export const Blog = ({ ...data }: BlogProps) => {
+  const { title, summary } = data.page;
+  const { articles } = data;
+
+  return (
+    <>
+      <Hero title={title}>
+        <HeroLead>{summary ?? ""}</HeroLead>
+      </Hero>
+      <Container>
+        <ul className="grid gap-8 lg:grid-cols-2">
+          {articles.map(
+            ({ title, summary, publishedAt, slug: { current }, _id }) => (
+              <li key={_id}>
+                <BlogTeaser
+                  title={title}
+                  lead={summary}
+                  date={publishedAt}
+                  slug={current}
+                />
+              </li>
+            ),
+          )}
+        </ul>
+      </Container>
+    </>
+  );
+};

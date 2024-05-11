@@ -1,18 +1,18 @@
 export const mainMenuLinks = [
   {
-    label: 'Home',
-    url: '/',
+    label: "Home",
+    url: "/",
   },
   {
-    label: 'About',
-    url: '/about',
+    label: "About",
+    url: "/about",
   },
   {
-    label: 'Portfolio',
-    url: '/portfolio',
+    label: "Portfolio",
+    url: "/portfolio",
   },
   {
-    label: 'Blog',
-    url: '/blog',
+    label: "Blog",
+    url: "/blog",
   },
 ];

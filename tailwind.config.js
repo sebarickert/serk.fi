@@ -1,18 +1,13 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  darkMode: "selector",
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./containers/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
-    extend: {
-      screens: {
-        prose: '850px',
-      },
-      fontFamily: {
-        sans: ['Inter var'],
-      },
-      colors: {
-        'neutral-850': '#202020',
-      },
-    },
+    extend: {},
   },
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio'), require('tailwind-scrollbar')],
+  plugins: [require("@tailwindcss/typography")],
 };
