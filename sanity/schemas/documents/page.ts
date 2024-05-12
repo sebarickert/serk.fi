@@ -7,5 +7,5 @@ export const page = defineType({
   title: "Page",
   type: "document",
   fieldsets: [{ name: "dates", title: "Dates", options: { columns: 2 } }],
-  fields: [...documentBaseFields({})],
+  fields: [...documentBaseFields()],
 });

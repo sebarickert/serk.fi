@@ -16,6 +16,8 @@ export const Blog = ({ ...data }: BlogProps) => {
   const { title, summary } = data.page;
   const { articles } = data;
 
+  console.log(articles);
+
   return (
     <>
       <Hero title={title}>
@@ -24,12 +26,12 @@ export const Blog = ({ ...data }: BlogProps) => {
       <Container>
         <ul className="grid gap-8 lg:grid-cols-2">
           {articles.map(
-            ({ title, summary, publishedAt, slug: { current }, _id }) => (
+            ({ title, summary, published, slug: { current }, _id }) => (
               <li key={_id}>
                 <BlogTeaser
                   title={title}
                   lead={summary}
-                  date={publishedAt}
+                  date={published}
                   slug={current}
                 />
               </li>

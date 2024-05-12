@@ -2,7 +2,11 @@ import { defineArrayMember, defineField } from "sanity";
 
 import { slugWithType } from "./slugWithType";
 
-export const documentBaseFields = ({ slugPrefix }: { slugPrefix?: string }) => [
+export const documentBaseFields = ({
+  slugPrefix,
+}: {
+  slugPrefix?: string;
+} = {}) => [
   defineField({
     title: "Title",
     name: "title",
@@ -59,6 +63,19 @@ export const documentBaseFields = ({ slugPrefix }: { slugPrefix?: string }) => [
             validation: (Rule) => Rule.required(),
           }),
         ],
+      }),
+    ],
+  }),
+  defineField({
+    title: "Image",
+    name: "image",
+    type: "image",
+    fields: [
+      defineField({
+        title: "Alternative text",
+        name: "alt",
+        type: "string",
+        validation: (Rule) => Rule.required(),
       }),
     ],
   }),

@@ -1,10 +1,11 @@
-import { monthNames } from "../constants/months";
-import { addLeadingZero } from "./addLeadingZero";
+import { DateTime } from "luxon";
 
-export const formatDate = (date: Date): string => {
-  const dateNumber = addLeadingZero(date.getDate());
-  const month = monthNames[date.getMonth()];
-  const year = date.getFullYear();
+// Format: Oct 15, 2022
+export const formatDateToFull = (date: Date) => {
+  return DateTime.fromISO(date.toString()).toLocaleString(DateTime.DATE_FULL);
+};
 
-  return `${month} ${dateNumber}, ${year}`;
+// Format: 2022-10-15
+export const formatDateToISODate = (date: Date) => {
+  return DateTime.fromISO(date.toString()).toFormat("yyyy-MM-dd");
 };

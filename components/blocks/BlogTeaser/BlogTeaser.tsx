@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import { formatDate } from "../../../utils/formatDate";
-import { Icon } from "../../elements/Icon/Icon";
+import { Icon } from "@/elements/Icon/Icon";
+import { formatDateToFull, formatDateToISODate } from "@/utils/formatDate";
 
 type BlogTeaserProps = {
   lead: string;
@@ -16,19 +16,17 @@ export const BlogTeaser = ({
   slug,
   date,
 }: BlogTeaserProps) => {
-  const dateISOFormat = new Date(date).toLocaleDateString("en-CA");
-
   const lead = leadRaw.length > 140 ? `${leadRaw.slice(0, 140)}...` : leadRaw;
 
   return (
     <article className="dark:border-neutral-850 dark:hover:bg-neutral-850 group relative flex h-full flex-col rounded-lg border bg-gray-50 p-6 duration-200 focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600 hover:bg-gray-100 dark:bg-neutral-800 dark:focus-within:ring-white">
       <time
-        dateTime={dateISOFormat}
+        dateTime={formatDateToISODate(date)}
         className="mb-4 inline-flex items-center gap-2 text-base font-medium text-gray-500 dark:text-gray-300"
       >
         <span className="sr-only">Published on</span>
         <Icon type="pencil" />
-        <span>{formatDate(new Date(date))}</span>
+        <span>{formatDateToFull(date)}</span>
       </time>
       <h2 className="text-2xl font-semibold dark:text-white">{title}</h2>
       <p className="mb-auto mt-3 text-base text-gray-700 dark:text-gray-300">

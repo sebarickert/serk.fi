@@ -12,5 +12,5 @@ export const SanityImage = ({
 }: SanityImageObjectWithAltText) => {
   const imageProps = useNextSanityImage(sanityClient, image);
 
-  return <Image {...imageProps} alt={alt} className="min-w-full" />;
+  return <Image {...imageProps} alt={alt} className="min-w-full first:mt-0" />;
 };

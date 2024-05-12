@@ -1,4 +1,4 @@
-import { defineType, defineField } from "sanity";
+import { defineType } from "sanity";
 
 import { documentBaseFields } from "@/sanity/utils/documentBaseFields";
 
@@ -7,13 +7,5 @@ export const showcase = defineType({
   name: "showcase",
   type: "document",
   fieldsets: [{ name: "dates", title: "Dates", options: { columns: 2 } }],
-  fields: [
-    ...documentBaseFields({ slugPrefix: "portfolio" }),
-    defineField({
-      name: "image",
-      type: "image",
-      validation: (Rule) => Rule.required(),
-      options: { hotspot: true },
-    }),
-  ],
+  fields: [...documentBaseFields({ slugPrefix: "portfolio" })],
 });
