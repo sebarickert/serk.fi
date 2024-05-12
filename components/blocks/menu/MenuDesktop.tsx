@@ -1,33 +1,21 @@
-import { mainMenuLinks } from "../../../constants/mainMenuLinks";
-
 import { MenuLink } from "./MenuLink";
 
-// import { MenuLink } from "./MenuLink";
+import { NavigationItemDto } from "@/types/NavigationItemDto";
 
-type MenuDesktopBase = {
-  children: React.ReactNode;
+type MenuDesktopProps = {
+  items: NavigationItemDto[];
 };
 
-const MenuDesktopBase = ({ children }: MenuDesktopBase) => {
-  return <div className={`hidden lg:-mr-4 lg:block`}>{children}</div>;
-};
-
-const MenuDesktopLinks = () => {
+export const MenuDesktop = ({ items }: MenuDesktopProps) => {
   return (
-    <ul className={`flex gap-2`}>
-      {mainMenuLinks.map(({ label, url }) => (
-        <li key={url}>
-          <MenuLink link={url}>{label}</MenuLink>
-        </li>
-      ))}
-    </ul>
-  );
-};
-
-export const MenuDesktop = () => {
-  return (
-    <MenuDesktopBase>
-      <MenuDesktopLinks />
-    </MenuDesktopBase>
+    <div className={`hidden lg:-mr-4 lg:block`}>
+      <ul className={`flex gap-2`}>
+        {items.map(({ title, slug }) => (
+          <li key={slug}>
+            <MenuLink link={slug}>{title}</MenuLink>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };

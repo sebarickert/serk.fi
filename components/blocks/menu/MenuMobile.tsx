@@ -1,23 +1,21 @@
-import { mainMenuLinks } from "../../../constants/mainMenuLinks";
 import { Logo } from "../../elements/Logo/Logo";
 import { Container } from "../Container/Container";
 
 import { MenuLink } from "./MenuLink";
 
+import { NavigationItemDto } from "@/types/NavigationItemDto";
+
 type MenuMobileProps = {
   isMenuOpen: boolean;
   handleMenuToggle(): void;
+  items: NavigationItemDto[];
 };
 
-type MenuMobileBaseProps = {
-  children: React.ReactNode;
-} & MenuMobileProps;
-
-const MenuMobileBase = ({
+export const MenuMobile = ({
   isMenuOpen,
-  children,
   handleMenuToggle,
-}: MenuMobileBaseProps) => {
+  items,
+}: MenuMobileProps) => {
   const handleOutsideClick = (event: MouseEvent): void => {
     const { target } = event;
 
@@ -44,45 +42,22 @@ const MenuMobileBase = ({
           id="menuMobileBase"
           className="rounded-b-lg bg-white shadow-xl dark:bg-neutral-900"
         >
-          {children}
+          <div className="mb-6">
+            <Container className="border-b border-gray-200 py-8 dark:border-neutral-800">
+              <Logo />
+            </Container>
+          </div>
+          <Container>
+            <ul className="grid grid-cols-1 pb-8">
+              {items.map(({ title, slug }) => (
+                <li key={slug}>
+                  <MenuLink link={slug}>{title}</MenuLink>
+                </li>
+              ))}
+            </ul>
+          </Container>
         </div>
       </div>
     </div>
-  );
-};
-
-const MenuMobileHeader = () => {
-  return (
-    <div className="mb-6">
-      <Container className="border-b border-gray-200 py-8 dark:border-neutral-800">
-        <Logo />
-      </Container>
-    </div>
-  );
-};
-
-const MenuMobileLinks = () => {
-  return (
-    <Container>
-      <ul className="grid grid-cols-1 pb-8">
-        {mainMenuLinks.map(({ label, url }) => (
-          <li key={url}>
-            <MenuLink link={url}>{label}</MenuLink>
-          </li>
-        ))}
-      </ul>
-    </Container>
-  );
-};
-
-export const MenuMobile = ({
-  isMenuOpen,
-  handleMenuToggle,
-}: MenuMobileProps) => {
-  return (
-    <MenuMobileBase isMenuOpen={isMenuOpen} handleMenuToggle={handleMenuToggle}>
-      <MenuMobileHeader />
-      <MenuMobileLinks />
-    </MenuMobileBase>
   );
 };

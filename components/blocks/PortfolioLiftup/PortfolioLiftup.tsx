@@ -9,7 +9,6 @@ type PortfolioLiftupProps = {
 };
 
 export const PortfolioLiftup = ({ posts }: PortfolioLiftupProps) => {
-  console.log(posts);
   return (
     <section>
       <Container>

@@ -16,8 +16,6 @@ export const Blog = ({ ...data }: BlogProps) => {
   const { title, summary } = data.page;
   const { articles } = data;
 
-  console.log(articles);
-
   return (
     <>
       <Hero title={title}>

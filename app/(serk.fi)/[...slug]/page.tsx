@@ -1,6 +1,5 @@
-import { groq } from "next-sanity";
-
 import { Article } from "@/layouts/Article/Article";
+import { pageQuery } from "@/sanity/queries";
 import { getSanityContent } from "@/utils/getSanityContent";
 import { PageDto } from "types/PageDto";
 
@@ -13,33 +12,25 @@ type PageProps = {
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = params;
 
-  const queryGetPageTitle = groq`*[_type == "page" && slug.current == $slug][0].title`;
-
-  const pageTitle = await getSanityContent(queryGetPageTitle, {
+  const { title } = await getSanityContent(pageQuery, {
     slug: `/${slug.join("/")}`,
   });
 
   return {
-    title: pageTitle,
+    title,
   };
 }
 
 async function getPageData(params: PageProps["params"]): Promise<PageDto> {
   const { slug } = params;
 
-  const queryGetPostContent = groq`*[_type == "page" && slug.current == $slug][0]`;
-
-  const queries = `{ "page": ${queryGetPostContent} }`;
-
-  const { page } = await getSanityContent(queries, {
+  return getSanityContent(pageQuery, {
     slug: `/${slug.join("/")}`,
   });
-
-  return { ...page };
 }
 
 export default async function Page({ params }: PageProps) {
-  const pageData = await getPageData(params);
+  const data = await getPageData(params);
 
-  return <Article {...pageData} />;
+  return <Article {...data} />;
 }

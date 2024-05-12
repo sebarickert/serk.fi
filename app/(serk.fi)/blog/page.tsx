@@ -1,6 +1,5 @@
-import { groq } from "next-sanity";
-
 import { Blog } from "@/layouts/Blog/Blog";
+import { articlesQuery, pageQuery } from "@/sanity/queries";
 import { getSanityContent } from "@/utils/getSanityContent";
 import { ArticleDto } from "types/ArticleDto";
 import { PageDto } from "types/PageDto";
@@ -9,10 +8,7 @@ async function getPageData(): Promise<{
   page: PageDto;
   articles: ArticleDto[];
 }> {
-  const queryGetPageData = groq`*[_type == "page" && slug.current == $slug][0]`;
-  const queryGetArticles = groq`*[_type == 'article']`;
-
-  const queries = `{"page": ${queryGetPageData}, "articles": ${queryGetArticles} }`;
+  const queries = `{"page": ${pageQuery}, "articles": ${articlesQuery} }`;
 
   const { page, articles } = await getSanityContent(queries, {
     slug: "/blog",
@@ -22,7 +18,7 @@ async function getPageData(): Promise<{
 }
 
 export default async function Page() {
-  const pageData = await getPageData();
+  const data = await getPageData();
 
-  return <Blog {...pageData} />;
+  return <Blog {...data} />;
 }

@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 import { Container } from "@/blocks/Container/Container";
-import { Menu } from "@/blocks/menu/menu";
 import { ThemeSwitcher } from "@/blocks/ThemeSwitcher/ThemeSwitcher";
+import { MenuContainer } from "@/containers/MenuContainer";
 import { Logo } from "@/elements/Logo/Logo";
 
 export const Header = () => (
@@ -14,7 +14,8 @@ export const Header = () => (
       >
         <Logo />
       </Link>
-      <Menu />
+
+      <MenuContainer />
       <ThemeSwitcher />
     </Container>
   </header>

@@ -1,6 +1,5 @@
-import { groq } from "next-sanity";
-
 import { Portfolio } from "@/layouts/Portfolio/Portfolio";
+import { pageQuery, showcasesQuery } from "@/sanity/queries";
 import { ShowcaseDto } from "@/types/ShowcaseDto";
 import { getSanityContent } from "@/utils/getSanityContent";
 import { PageDto } from "types/PageDto";
@@ -9,10 +8,7 @@ async function getPageData(): Promise<{
   page: PageDto;
   showcases: ShowcaseDto[];
 }> {
-  const queryGetPageData = groq`*[_type == "page" && slug.current == $slug][0]`;
-  const queryGetArticles = groq`*[_type == 'showcase']`;
-
-  const queries = `{"page": ${queryGetPageData}, "showcases": ${queryGetArticles} }`;
+  const queries = `{"page": ${pageQuery}, "showcases": ${showcasesQuery} }`;
 
   const { page, showcases } = await getSanityContent(queries, {
     slug: "/portfolio",
@@ -22,7 +18,7 @@ async function getPageData(): Promise<{
 }
 
 export default async function Page() {
-  const pageData = await getPageData();
+  const data = await getPageData();
 
-  return <Portfolio {...pageData} />;
+  return <Portfolio {...data} />;
 }

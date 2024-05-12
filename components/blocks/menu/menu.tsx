@@ -6,7 +6,13 @@ import { MenuDesktop } from "./MenuDesktop";
 import { MenuMobile } from "./MenuMobile";
 import { MenuToggle } from "./MenuToggle";
 
-export const Menu = () => {
+import { NavigationItemDto } from "@/types/NavigationItemDto";
+
+type MenuProps = {
+  items: NavigationItemDto[];
+};
+
+export const Menu = ({ items }: MenuProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuToggle = (): void => {
@@ -16,8 +22,12 @@ export const Menu = () => {
   return (
     <nav>
       <MenuToggle isMenuOpen={isMenuOpen} handleMenuToggle={handleMenuToggle} />
-      <MenuMobile isMenuOpen={isMenuOpen} handleMenuToggle={handleMenuToggle} />
-      <MenuDesktop />
+      <MenuMobile
+        items={items}
+        isMenuOpen={isMenuOpen}
+        handleMenuToggle={handleMenuToggle}
+      />
+      <MenuDesktop items={items} />
     </nav>
   );
 };
