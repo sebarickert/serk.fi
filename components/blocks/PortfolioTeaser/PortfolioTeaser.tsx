@@ -1,7 +1,7 @@
 import NextImage from "next/image";
 import Link from "next/link";
 
-import { Icon } from "../../elements/icon/icon";
+import { Icon } from "../../elements/Icon/Icon";
 
 type PortfolioTeaserProps = {
   title: string;

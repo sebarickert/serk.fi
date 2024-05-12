@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { formatDate } from "../../../utils/formatDate";
-import { Icon } from "../../elements/icon/icon";
+import { Icon } from "../../elements/Icon/Icon";
 
 type BlogTeaserProps = {
   lead: string;

@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-import { Container } from "@/blocks/container/container";
+import { Container } from "@/blocks/Container/Container";
 import { Menu } from "@/blocks/menu/menu";
-import { ThemeSwitcher } from "@/blocks/theme-switcher/theme-switcher";
-import { Logo } from "@/elements/logo/logo";
+import { ThemeSwitcher } from "@/blocks/ThemeSwitcher/ThemeSwitcher";
+import { Logo } from "@/elements/Logo/Logo";
 
 export const Header = () => (
   <header className="relative z-10 bg-white dark:bg-neutral-900">

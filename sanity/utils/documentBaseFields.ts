@@ -51,6 +51,14 @@ export const documentBaseFields = ({ slugPrefix }: { slugPrefix?: string }) => [
       }),
       defineArrayMember({
         type: "image",
+        fields: [
+          defineField({
+            title: "Alternative text",
+            name: "alt",
+            type: "string",
+            validation: (Rule) => Rule.required(),
+          }),
+        ],
       }),
     ],
   }),

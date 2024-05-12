@@ -1,9 +1,9 @@
 import { groq } from "next-sanity";
 
-import { Portfolio } from "@/layouts/portfolio/portfolio";
-import { PageDto } from "@/types/PageDto";
+import { Portfolio } from "@/layouts/Portfolio/Portfolio";
 import { ShowcaseDto } from "@/types/ShowcaseDto";
 import { getSanityContent } from "@/utils/getSanityContent";
+import { PageDto } from "types/PageDto";
 
 async function getPageData(): Promise<{
   page: PageDto;

@@ -1,11 +1,11 @@
 "use client";
 
-import { Container } from "@/blocks/container/container";
-import { Hero } from "@/blocks/hero/hero";
-import { HeroLead } from "@/blocks/hero/hero.lead";
-import { PortfolioTeaser } from "@/blocks/portfolio-teaser/portfolio-teaser";
-import { PageDto } from "@/types/PageDto";
+import { Container } from "@/blocks/Container/Container";
+import { Hero } from "@/blocks/Hero/Hero";
+import { HeroLead } from "@/blocks/Hero/HeroLead";
+import { PortfolioTeaser } from "@/blocks/PortfolioTeaser/PortfolioTeaser";
 import { ShowcaseDto } from "@/types/ShowcaseDto";
+import { PageDto } from "types/PageDto";
 
 type PortfolioProps = {
   page: PageDto;

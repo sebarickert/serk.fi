@@ -1,5 +1,5 @@
 import { isExternalLink } from "../../../utils/isExternalLink";
-import { Link } from "../../elements/link/link";
+import { Link } from "../../elements/Link/Link";
 
 type MenuLinkProps = {
   children: string;

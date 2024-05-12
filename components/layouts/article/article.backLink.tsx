@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import { Icon } from "../../elements/icon/icon";
-import { Container } from "../../blocks/container/container";
+import { Container } from "../../blocks/Container/Container";
+import { Icon } from "../../elements/Icon/Icon";
 
 export type ArticleBackLinkProps = {
   backLinkUrl: string;

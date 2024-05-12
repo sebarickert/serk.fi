@@ -1,7 +1,7 @@
-import { Container } from "@/blocks/container/container";
-import { Spacer } from "@/blocks/spacer/spacer";
+import { Container } from "@/blocks/Container/Container";
+import { Spacer } from "@/blocks/Spacer/Spacer";
 import { socialMediaLinks } from "@/constants/socialMediaLinks";
-import { Heading } from "@/elements/heading/heading";
+import { Heading } from "@/elements/Heading/Heading";
 
 export const Footer = () => (
   <footer className="dark:bg-neutral-850 bg-gray-50">

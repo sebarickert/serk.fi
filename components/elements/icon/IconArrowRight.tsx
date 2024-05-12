@@ -1,5 +1,5 @@
-import { IconElementProps } from "./icon";
-import { IconSvgBase } from "./icon.svgBase";
+import { IconElementProps } from "./Icon";
+import { IconSvgBase } from "./IconSvgBase";
 
 export const IconArrowRight = ({ className = "" }: IconElementProps) => {
   return (

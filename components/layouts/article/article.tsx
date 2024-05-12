@@ -1,23 +1,28 @@
 import { PortableText, PortableTextReactComponents } from "next-sanity";
 
-import { Container } from "../../blocks/container/container";
+import { Container } from "../../blocks/Container/Container";
 
-import { Hero } from "@/blocks/hero/hero";
-import { HeroLead } from "@/blocks/hero/hero.lead";
-import { SanityImage } from "@/blocks/sanity-image/sanity-image";
-import { SyntaxHighlighter } from "@/blocks/syntax-highlighter/syntax-highlighter";
-import { Icon } from "@/elements/icon/icon";
-import { ArticleDto } from "@/types/ArticleDto";
-import { PageDto } from "@/types/PageDto";
+import { Hero } from "@/blocks/Hero/Hero";
+import { HeroLead } from "@/blocks/Hero/HeroLead";
+import { SanityImage } from "@/blocks/SanityImage/SanityImage";
+import { SyntaxHighlighter } from "@/blocks/SyntaxHighlighter/SyntaxHighlighter";
+import { Icon } from "@/elements/Icon/Icon";
+import { ShowcaseDto } from "@/types/ShowcaseDto";
+import { ArticleDto } from "types/ArticleDto";
+import { PageDto } from "types/PageDto";
 
-const contentComponents: Partial<PortableTextReactComponents> = {
+const components: Partial<PortableTextReactComponents> = {
   types: {
     code: ({ value }) => <SyntaxHighlighter {...value} />,
-    image: ({ value }) => <SanityImage {...value} />,
+    image: ({ value }) => (
+      <div className="-mx-8 md:-mx-10 lg:-mx-16">
+        <SanityImage {...value} />
+      </div>
+    ),
   },
 };
 
-type ArticleProps = PageDto | ArticleDto;
+type ArticleProps = PageDto | ArticleDto | ShowcaseDto;
 
 export const Article = ({
   title,
@@ -46,7 +51,7 @@ export const Article = ({
               <span>{`${published}`}</span>
             </time>
           )}
-          <PortableText value={content} components={contentComponents} />
+          <PortableText value={content} components={components} />
         </section>
       </Container>
     </article>

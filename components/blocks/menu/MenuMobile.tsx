@@ -1,8 +1,8 @@
 import { mainMenuLinks } from "../../../constants/mainMenuLinks";
-import { Logo } from "../../elements/logo/logo";
-import { Container } from "../container/container";
+import { Logo } from "../../elements/Logo/Logo";
+import { Container } from "../Container/Container";
 
-import { MenuLink } from "./menu.link";
+import { MenuLink } from "./MenuLink";
 
 type MenuMobileProps = {
   isMenuOpen: boolean;

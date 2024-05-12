@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 
-import { MenuDesktop } from "./menu.desktop";
-import { MenuMobile } from "./menu.mobile";
-import { MenuToggle } from "./menu.toggle";
+import { MenuDesktop } from "./MenuDesktop";
+import { MenuMobile } from "./MenuMobile";
+import { MenuToggle } from "./MenuToggle";
 
 export const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

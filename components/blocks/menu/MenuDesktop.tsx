@@ -1,6 +1,8 @@
 import { mainMenuLinks } from "../../../constants/mainMenuLinks";
 
-import { MenuLink } from "./menu.link";
+import { MenuLink } from "./MenuLink";
+
+// import { MenuLink } from "./MenuLink";
 
 type MenuDesktopBase = {
   children: React.ReactNode;

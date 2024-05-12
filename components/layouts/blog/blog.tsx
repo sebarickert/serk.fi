@@ -1,11 +1,11 @@
 "use client";
 
-import { BlogTeaser } from "@/blocks/blog-teaser/blog-teaser";
-import { Container } from "@/blocks/container/container";
-import { Hero } from "@/blocks/hero/hero";
-import { HeroLead } from "@/blocks/hero/hero.lead";
-import { ArticleDto } from "@/types/ArticleDto";
-import { PageDto } from "@/types/PageDto";
+import { BlogTeaser } from "@/blocks/BlogTeaser/BlogTeaser";
+import { Container } from "@/blocks/Container/Container";
+import { Hero } from "@/blocks/Hero/Hero";
+import { HeroLead } from "@/blocks/Hero/HeroLead";
+import { ArticleDto } from "types/ArticleDto";
+import { PageDto } from "types/PageDto";
 
 type BlogProps = {
   page: PageDto;

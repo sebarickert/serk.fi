@@ -1,20 +1,21 @@
-import { PortfolioPostTeaser } from "../../../pages123/portfolio";
-import { Heading } from "../../elements/heading/heading";
-import { Container } from "../container/container";
-import { PortfolioTeaser } from "../portfolio-teaser/portfolio-teaser";
-import { Spacer } from "../spacer/spacer";
+import { Heading } from "../../elements/Heading/Heading";
+import { Container } from "../Container/Container";
+// import { PortfolioTeaser } from "../PortfolioTeaser/PortfolioTeaser";
+import { Spacer } from "../Spacer/Spacer";
 
 type PortfolioLiftupProps = {
-  posts: PortfolioPostTeaser[];
+  // posts: PortfolioPostTeaser[];
+  posts: any[];
 };
 
 export const PortfolioLiftup = ({ posts }: PortfolioLiftupProps) => {
+  console.log(posts);
   return (
     <section>
       <Container>
         <Spacer>
           <Heading className="mb-8 lg:mb-12">Latest showcases</Heading>
-          <ul className="grid gap-y-12 md:gap-x-8 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-0">
+          {/* <ul className="grid gap-y-12 md:gap-x-8 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-0">
             {posts.map(
               ({
                 title,
@@ -46,7 +47,7 @@ export const PortfolioLiftup = ({ posts }: PortfolioLiftupProps) => {
                 );
               },
             )}
-          </ul>
+          </ul> */}
         </Spacer>
       </Container>
     </section>

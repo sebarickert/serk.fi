@@ -1,8 +1,8 @@
 import { groq } from "next-sanity";
 
-import { Article } from "@/layouts/article/article";
-import { PageDto } from "@/types/PageDto";
+import { Article } from "@/layouts/Article/Article";
 import { getSanityContent } from "@/utils/getSanityContent";
+import { PageDto } from "types/PageDto";
 
 type PageProps = {
   params: {

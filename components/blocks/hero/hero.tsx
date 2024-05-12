@@ -1,6 +1,6 @@
-import { Container } from "@/blocks/container/container";
-import { Spacer } from "@/blocks/spacer/spacer";
-import { Heading } from "@/elements/heading/heading";
+import { Container } from "@/blocks/Container/Container";
+import { Spacer } from "@/blocks/Spacer/Spacer";
+import { Heading } from "@/elements/Heading/Heading";
 
 type HeroProps = {
   title: string;

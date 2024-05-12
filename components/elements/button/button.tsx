@@ -1,8 +1,8 @@
 import { isExternalLink } from "../../../utils/isExternalLink";
 
-import { ButtonExternal } from "./button.external";
-import { ButtonInternal } from "./button.internal";
-import { ButtonPlain } from "./button.plain";
+import { ButtonExternal } from "./ButtonExternal";
+import { ButtonInternal } from "./ButtonInternal";
+import { ButtonPlain } from "./ButtonPlain";
 
 type ButtonProps = {
   accentColor?: "primary" | "secondary";

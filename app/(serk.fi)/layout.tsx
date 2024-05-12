@@ -3,7 +3,7 @@ import "@/styles/global.css";
 import { Metadata } from "next";
 import { ReactNode } from "react";
 
-import { Layout } from "@/layouts/layout/layout";
+import { Layout } from "@/layouts/Layout/Layout";
 
 type RootLayoutProps = {
   children: ReactNode;

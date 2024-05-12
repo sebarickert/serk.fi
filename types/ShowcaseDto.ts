@@ -1,5 +1,7 @@
-import { SanityDocument, SanityImageAssetDocument } from "@sanity/client";
+import { SanityDocument } from "@sanity/client";
 import { PortableTextBlock, Slug } from "sanity";
+
+import { SanityImageObjectWithAltText } from "@/constants/types";
 
 export type ShowcaseDto = {
   title: string;
@@ -8,5 +10,5 @@ export type ShowcaseDto = {
   updated: Date;
   summary: string;
   content: PortableTextBlock[];
-  image: SanityImageAssetDocument;
+  image: SanityImageObjectWithAltText;
 } & SanityDocument;

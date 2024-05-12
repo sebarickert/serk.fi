@@ -1,8 +1,8 @@
-import { IconArrowLeft } from "./icon.arrowLeft";
-import { IconArrowRight } from "./icon.arrowRight";
-import { IconMoon } from "./icon.moon";
-import { IconPencil } from "./icon.pencil";
-import { IconSun } from "./icon.sun";
+import { IconArrowLeft } from "./IconArrowLeft";
+import { IconArrowRight } from "./IconArrowRight";
+import { IconMoon } from "./IconMoon";
+import { IconPencil } from "./IconPencil";
+import { IconSun } from "./IconSun";
 
 export type IconName =
   | "arrow-left"

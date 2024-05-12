@@ -1,11 +1,11 @@
-import { BlogPost } from "../../../pages123/blog";
-import { Heading } from "../../elements/heading/heading";
-import { BlogTeaser } from "../blog-teaser/blog-teaser";
-import { Container } from "../container/container";
-import { Spacer } from "../spacer/spacer";
+import { Heading } from "../../elements/Heading/Heading";
+import { BlogTeaser } from "../BlogTeaser/BlogTeaser";
+import { Container } from "../Container/Container";
+import { Spacer } from "../Spacer/Spacer";
 
 type BlogLiftupProps = {
-  posts: BlogPost[];
+  // posts: BlogPost[];
+  posts: any[];
 };
 
 export const BlogLiftup = ({ posts }: BlogLiftupProps) => {
