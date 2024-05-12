@@ -43,39 +43,4 @@ export const slugWithType = (prefix = ``, source = `title`) => {
         return true;
       }),
   });
-
-  // return {
-  //   name: `slug`,
-  //   type: `slug`,
-  //   options: {
-  //     source,
-  //     slugify: (value: string) => formatSlug(value, slugStart),
-  //   },
-  //   validation: (Rule: Rule) =>
-  //     Rule.required().custom(({ current }: { current: string }) => {
-  //       if (typeof current === "undefined") {
-  //         return true;
-  //       }
-
-  //       if (current) {
-  //         if (!current.startsWith(slugStart)) {
-  //           return `Slug must begin with "${slugStart}". Click "Generate" to reset.`;
-  //         }
-
-  //         if (current.slice(slugStart.length).split("").includes("/")) {
-  //           return `Slug cannot have another "/" after "${slugStart}"`;
-  //         }
-
-  //         if (current === slugStart) {
-  //           return `Slug cannot be empty`;
-  //         }
-
-  //         if (current.endsWith("/")) {
-  //           return `Slug cannot end with "/"`;
-  //         }
-  //       }
-
-  //       return true;
-  //     }),
-  // };
 };
