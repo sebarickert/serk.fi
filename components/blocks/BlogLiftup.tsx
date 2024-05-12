@@ -1,7 +1,7 @@
 import { Heading } from "../../elements/Heading/Heading";
-import { BlogTeaser } from "../BlogTeaser/BlogTeaser";
-import { Container } from "../Container/Container";
-import { Spacer } from "../Spacer/Spacer";
+import { BlogTeaser } from "../BlogTeaser";
+import { Container } from "../Container";
+import { Spacer } from "../Spacer";
 
 type BlogLiftupProps = {
   // posts: BlogPost[];

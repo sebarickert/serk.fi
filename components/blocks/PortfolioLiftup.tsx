@@ -1,7 +1,6 @@
-import { Heading } from "../../elements/Heading/Heading";
-import { Container } from "../Container/Container";
-// import { PortfolioTeaser } from "../PortfolioTeaser/PortfolioTeaser";
-import { Spacer } from "../Spacer/Spacer";
+import { Container } from "@/blocks/Container";
+import { Spacer } from "@/blocks/Spacer";
+import { Heading } from "@/elements/Heading";
 
 type PortfolioLiftupProps = {
   // posts: PortfolioPostTeaser[];

@@ -1,16 +1,15 @@
 import { PortableText, PortableTextReactComponents } from "next-sanity";
 
-import { Container } from "../../blocks/Container/Container";
-
+import { Container } from "@/blocks/Container";
 import { Hero } from "@/blocks/Hero/Hero";
 import { HeroLead } from "@/blocks/Hero/HeroLead";
-import { SanityImage } from "@/blocks/SanityImage/SanityImage";
-import { SyntaxHighlighter } from "@/blocks/SyntaxHighlighter/SyntaxHighlighter";
+import { SanityImage } from "@/blocks/SanityImage";
+import { SyntaxHighlighter } from "@/blocks/SyntaxHighlighter";
 import { Icon } from "@/elements/Icon/Icon";
+import { ArticleDto } from "@/types/ArticleDto";
+import { PageDto } from "@/types/PageDto";
 import { ShowcaseDto } from "@/types/ShowcaseDto";
 import { formatDateToFull, formatDateToISODate } from "@/utils/formatDate";
-import { ArticleDto } from "types/ArticleDto";
-import { PageDto } from "types/PageDto";
 
 const components: Partial<PortableTextReactComponents> = {
   types: {

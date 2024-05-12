@@ -1,4 +1,4 @@
-import { Portfolio } from "@/layouts/Portfolio/Portfolio";
+import { Portfolio } from "@/layouts/Portfolio";
 import { pageQuery, showcasesQuery } from "@/sanity/queries";
 import { ShowcaseDto } from "@/types/ShowcaseDto";
 import { getSanityContent } from "@/utils/getSanityContent";

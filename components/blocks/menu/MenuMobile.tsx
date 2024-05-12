@@ -1,5 +1,5 @@
-import { Logo } from "../../elements/Logo/Logo";
-import { Container } from "../Container/Container";
+import { Logo } from "../../elements/Logo";
+import { Container } from "../Container";
 
 import { MenuLink } from "./MenuLink";
 

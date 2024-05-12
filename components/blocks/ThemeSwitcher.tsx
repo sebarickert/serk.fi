@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { Icon } from "../../elements/Icon/Icon";
+import { Icon } from "@/elements/Icon/Icon";
 
 const useLocalStorage = (value) => {
   const [intialized, setIntialized] = useState(false);

@@ -1,9 +1,9 @@
 "use client";
 
-import { Container } from "@/blocks/Container/Container";
+import { Container } from "@/blocks/Container";
 import { Hero } from "@/blocks/Hero/Hero";
 import { HeroLead } from "@/blocks/Hero/HeroLead";
-import { PortfolioTeaser } from "@/blocks/PortfolioTeaser/PortfolioTeaser";
+import { PortfolioTeaser } from "@/blocks/PortfolioTeaser";
 import { ShowcaseDto } from "@/types/ShowcaseDto";
 import { PageDto } from "types/PageDto";
 

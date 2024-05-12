@@ -1,4 +1,4 @@
-import { Blog } from "@/layouts/Blog/Blog";
+import { Blog } from "@/layouts/Blog";
 import { articlesQuery, pageQuery } from "@/sanity/queries";
 import { getSanityContent } from "@/utils/getSanityContent";
 import { ArticleDto } from "types/ArticleDto";

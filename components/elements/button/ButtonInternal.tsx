@@ -1,4 +1,4 @@
-import { Link } from "../Link/Link";
+import { Link } from "../Link";
 
 type ButtonInternalProps = {
   children: string | React.ReactNode;

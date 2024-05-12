@@ -1,7 +1,7 @@
 "use client";
 
-import { BlogTeaser } from "@/blocks/BlogTeaser/BlogTeaser";
-import { Container } from "@/blocks/Container/Container";
+import { BlogTeaser } from "@/blocks/BlogTeaser";
+import { Container } from "@/blocks/Container";
 import { Hero } from "@/blocks/Hero/Hero";
 import { HeroLead } from "@/blocks/Hero/HeroLead";
 import { ArticleDto } from "types/ArticleDto";

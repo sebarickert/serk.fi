@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 import { isExternalLink } from "../../../utils/isExternalLink";
-import { Link } from "../../elements/Link/Link";
+import { Link } from "../../elements/Link";
 
 type MenuLinkProps = {
   children: string;
