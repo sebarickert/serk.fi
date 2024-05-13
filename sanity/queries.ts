@@ -13,5 +13,6 @@ export const articleQuery = groq`*[_type == "article" && slug.current == $slug][
 
 export const showcaseQuery = groq`*[_type == "showcase" && slug.current == $slug][0]`;
 
+export const pagesQuery = groq`*[_type == 'page']`;
 export const showcasesQuery = groq`*[_type == 'showcase']`;
 export const articlesQuery = groq`*[_type == 'article']`;

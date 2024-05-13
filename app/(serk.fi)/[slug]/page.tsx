@@ -1,5 +1,5 @@
 import { Article } from "@/layouts/Article";
-import { pageQuery } from "@/sanity/queries";
+import { pageQuery, pagesQuery } from "@/sanity/queries";
 import { getSanityContent } from "@/utils/getSanityContent";
 import { PageDto } from "types/PageDto";
 
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: PageProps) {
   const { slug } = params;
 
   const { title } = await getSanityContent(pageQuery, {
-    slug: `/${slug.join("/")}`,
+    slug: `/${slug}`,
   });
 
   return {
@@ -21,11 +21,19 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
+export async function generateStaticParams() {
+  const pages: PageDto[] = await getSanityContent(pagesQuery);
+
+  return pages.map(({ slug }) => ({
+    slug: slug.current,
+  }));
+}
+
 async function getPageData(params: PageProps["params"]): Promise<PageDto> {
   const { slug } = params;
 
   return getSanityContent(pageQuery, {
-    slug: `/${slug.join("/")}`,
+    slug: `/${slug}`,
   });
 }
 

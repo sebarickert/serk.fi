@@ -1,5 +1,3 @@
-"use client";
-
 import { BlogTeaser } from "@/blocks/BlogTeaser";
 import { Container } from "@/blocks/Container";
 import { Hero } from "@/blocks/Hero/Hero";
@@ -23,18 +21,11 @@ export const Blog = ({ ...data }: BlogProps) => {
       </Hero>
       <Container>
         <ul className="grid gap-8 lg:grid-cols-2">
-          {articles.map(
-            ({ title, summary, published, slug: { current }, _id }) => (
-              <li key={_id}>
-                <BlogTeaser
-                  title={title}
-                  lead={summary}
-                  date={published}
-                  slug={current}
-                />
-              </li>
-            ),
-          )}
+          {articles.map((article) => (
+            <li key={article._id}>
+              <BlogTeaser {...article} />
+            </li>
+          ))}
         </ul>
       </Container>
     </>

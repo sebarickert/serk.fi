@@ -33,7 +33,7 @@ export const Article = ({
   image,
 }: ArticleProps) => {
   return (
-    <article className="-mt-8 py-16 lg:mt-0">
+    <article>
       <Hero title={title}>
         <HeroLead>{summary ?? ""}</HeroLead>
         {published && (
