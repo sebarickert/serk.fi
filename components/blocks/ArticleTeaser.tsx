@@ -5,7 +5,7 @@ import { Icon } from "@/elements/Icon/Icon";
 import { ArticleDto } from "@/types/ArticleDto";
 import { formatDateToFull, formatDateToISODate } from "@/utils/formatDate";
 
-export const BlogTeaser = ({
+export const ArticleTeaser = ({
   title,
   summary: summaryRaw,
   slug: { current: slug },
@@ -36,11 +36,11 @@ export const BlogTeaser = ({
       <Link
         href={slug}
         className="mt-6 inline-flex items-center gap-2 text-base font-medium text-gray-500 outline-none duration-200 group-hover:ml-1"
-        aria-label={`Read post - ${title}`}
-        title={`Read post - ${title}`}
+        aria-label={`Read article - ${title}`}
+        title={`Read article - ${title}`}
       >
         <span className="absolute inset-0" aria-hidden="true"></span>
-        <span>Read post</span>
+        <span>Read article</span>
         <Icon type="arrow-right" />
       </Link>
     </article>

@@ -1,4 +1,4 @@
-import { BlogTeaser } from "@/blocks/BlogTeaser";
+import { ArticleTeaser } from "@/blocks/ArticleTeaser";
 import { Container } from "@/blocks/Container";
 import { Hero } from "@/blocks/Hero/Hero";
 import { HeroLead } from "@/blocks/Hero/HeroLead";
@@ -23,7 +23,7 @@ export const Blog = ({ ...data }: BlogProps) => {
         <ul className="grid gap-8 lg:grid-cols-2">
           {articles.map((article) => (
             <li key={article._id}>
-              <BlogTeaser {...article} />
+              <ArticleTeaser {...article} />
             </li>
           ))}
         </ul>
