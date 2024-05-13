@@ -4,6 +4,10 @@ import { ShowcaseDto } from "@/types/ShowcaseDto";
 import { getSanityContent } from "@/utils/getSanityContent";
 import { PageDto } from "types/PageDto";
 
+export const metadata = {
+  title: "Portfolio",
+};
+
 async function getPageData(): Promise<{
   page: PageDto;
   showcases: ShowcaseDto[];

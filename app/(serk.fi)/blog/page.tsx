@@ -4,6 +4,10 @@ import { getSanityContent } from "@/utils/getSanityContent";
 import { ArticleDto } from "types/ArticleDto";
 import { PageDto } from "types/PageDto";
 
+export const metadata = {
+  title: "Blog",
+};
+
 async function getPageData(): Promise<{
   page: PageDto;
   articles: ArticleDto[];
