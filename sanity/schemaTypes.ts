@@ -4,6 +4,8 @@ import { page } from "./schemas/documents/page";
 import { showcase } from "./schemas/documents/showcase";
 import { link } from "./schemas/objects/link";
 import { navigationItem } from "./schemas/objects/navigationItem";
+import { portableText } from "./schemas/objects/portableText";
+import { showcaseListing } from "./schemas/objects/showcaseListing";
 
 export const schemaTypes = [
   page,
@@ -12,4 +14,6 @@ export const schemaTypes = [
   navigation,
   link,
   navigationItem,
+  portableText,
+  showcaseListing,
 ];

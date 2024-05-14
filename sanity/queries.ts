@@ -7,7 +7,16 @@ export const menuItemsQuery = groq`
     }
   `;
 
-export const pageQuery = groq`*[_type == "page" && slug.current == $slug][0]`;
+export const pageQuery = groq`*[_type == "page" && slug.current == $slug][0]{
+  ...,
+  content[]{
+    ...,
+    _type == 'showcaseListing' => {
+      ...,
+      showcases[]->
+    }
+  }
+}`;
 
 export const articleQuery = groq`*[_type == "article" && slug.current == $slug][0]`;
 

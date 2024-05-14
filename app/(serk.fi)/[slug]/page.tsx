@@ -1,6 +1,6 @@
-import { Article } from "@/layouts/Article";
+import { sanityClient } from "@/constants/sanityClient";
+import { BasicPage } from "@/layouts/BasicPage";
 import { pageQuery, pagesQuery } from "@/sanity/queries";
-import { getSanityContent } from "@/utils/getSanityContent";
 import { PageDto } from "types/PageDto";
 
 type PageProps = {
@@ -12,7 +12,7 @@ type PageProps = {
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = params;
 
-  const { title } = await getSanityContent(pageQuery, {
+  const { title } = await sanityClient.fetch(pageQuery, {
     slug: `/${slug}`,
   });
 
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export async function generateStaticParams() {
-  const pages: PageDto[] = await getSanityContent(pagesQuery);
+  const pages: PageDto[] = await sanityClient.fetch(pagesQuery);
 
   return pages.map(({ slug }) => ({
     slug: slug.current,
@@ -32,13 +32,12 @@ export async function generateStaticParams() {
 async function getPageData(params: PageProps["params"]): Promise<PageDto> {
   const { slug } = params;
 
-  return getSanityContent(pageQuery, {
+  return sanityClient.fetch(pageQuery, {
     slug: `/${slug}`,
   });
 }
 
 export default async function Page({ params }: PageProps) {
   const data = await getPageData(params);
-
-  return <Article {...data} />;
+  return <BasicPage {...data} />;
 }

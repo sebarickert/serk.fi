@@ -1,14 +1,10 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
 
-import { documentBaseFields } from "@/sanity/utils/documentBaseFields";
-
-export const showcase = defineType({
-  title: "Showcase",
-  name: "showcase",
-  type: "document",
-  fieldsets: [{ name: "dates", title: "Dates", options: { columns: 2 } }],
+export const portableText = defineType({
+  name: "portableText",
+  title: "Text",
+  type: "object",
   fields: [
-    ...documentBaseFields({ slugPrefix: "portfolio" }),
     defineField({
       name: "content",
       title: "Content",
@@ -39,19 +35,6 @@ export const showcase = defineType({
               validation: (Rule) => Rule.required(),
             }),
           ],
-        }),
-      ],
-    }),
-    defineField({
-      title: "Image",
-      name: "image",
-      type: "image",
-      fields: [
-        defineField({
-          title: "Alternative text",
-          name: "alt",
-          type: "string",
-          validation: (Rule) => Rule.required(),
         }),
       ],
     }),

@@ -1,6 +1,6 @@
+import { sanityClient } from "@/constants/sanityClient";
 import { Blog } from "@/layouts/Blog";
 import { articlesQuery, pageQuery } from "@/sanity/queries";
-import { getSanityContent } from "@/utils/getSanityContent";
 import { ArticleDto } from "types/ArticleDto";
 import { PageDto } from "types/PageDto";
 
@@ -14,11 +14,9 @@ async function getPageData(): Promise<{
 }> {
   const queries = `{"page": ${pageQuery}, "articles": ${articlesQuery} }`;
 
-  const { page, articles } = await getSanityContent(queries, {
+  return sanityClient.fetch(queries, {
     slug: "/blog",
   });
-
-  return { page, articles };
 }
 
 export default async function Page() {

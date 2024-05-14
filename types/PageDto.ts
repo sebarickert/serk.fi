@@ -6,6 +6,6 @@ export type PageDto = {
   slug: Slug;
   published: Date;
   updated: Date;
-  summary?: string;
+  summary: string;
   content: PortableTextBlock[];
 } & SanityDocument;

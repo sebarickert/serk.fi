@@ -30,14 +30,6 @@ export const slugWithType = (prefix = ``, source = `title`) => {
           if (current.slice(slugStart.length).split("").includes("/")) {
             return `Slug cannot have another "/" after "${slugStart}"`;
           }
-
-          if (current === slugStart) {
-            return `Slug cannot be empty`;
-          }
-
-          if (current.endsWith("/")) {
-            return `Slug cannot end with "/"`;
-          }
         }
 
         return true;

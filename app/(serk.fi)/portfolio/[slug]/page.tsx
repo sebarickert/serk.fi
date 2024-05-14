@@ -1,6 +1,6 @@
+import { sanityClient } from "@/constants/sanityClient";
 import { Article } from "@/layouts/Article";
 import { showcaseQuery } from "@/sanity/queries";
-import { getSanityContent } from "@/utils/getSanityContent";
 import { ArticleDto } from "types/ArticleDto";
 
 type PageProps = {
@@ -12,7 +12,7 @@ type PageProps = {
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = params;
 
-  const { title } = await getSanityContent(showcaseQuery, {
+  const { title } = await sanityClient.fetch(showcaseQuery, {
     slug: `/portfolio/${slug}`,
   });
 
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps) {
 async function getPageData(params: PageProps["params"]): Promise<ArticleDto> {
   const { slug } = params;
 
-  return getSanityContent(showcaseQuery, {
+  return sanityClient.fetch(showcaseQuery, {
     slug: `/portfolio/${slug}`,
   });
 }
