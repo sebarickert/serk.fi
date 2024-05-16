@@ -27,7 +27,3 @@ export const pageQuery = groq`*[_type == "page" && slug.current == $slug][0]{
 export const articleQuery = groq`*[_type == "article" && slug.current == $slug][0]`;
 
 export const showcaseQuery = groq`*[_type == "showcase" && slug.current == $slug][0]`;
-
-export const pagesQuery = groq`*[_type == 'page']`;
-export const showcasesQuery = groq`*[_type == 'showcase'] | order(published desc)`;
-export const articlesQuery = groq`*[_type == 'article'] | order(published desc)`;
