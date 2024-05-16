@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -15,17 +16,17 @@ export const Link = ({
   activeClassName = "",
 }: LinkProps) => {
   const pathname = usePathname();
-  // const { asPath } = useRouter();
-  // const routerSlugBase = asPath.split("/").filter((item) => item)[0];
-  // const hrefSlugBase = href.split("/").filter((item) => item)[0];
-  // const isPartiallyActive = routerSlugBase === hrefSlugBase;
 
-  const isLinkActive = pathname === href;
+  const isLinkActive =
+    pathname === href || (href !== "/" && pathname.startsWith(href));
 
   return (
     <NextLink
       href={href}
-      className={`inline-block ${className} ${isLinkActive ? activeClassName : ""}`}
+      className={clsx("inline-block", {
+        [className]: true,
+        [activeClassName]: isLinkActive,
+      })}
     >
       {children}
     </NextLink>

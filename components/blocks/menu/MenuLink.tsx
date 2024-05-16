@@ -31,7 +31,9 @@ export const MenuLink = ({ children, link }: MenuLinkProps) => {
     <Link
       href={link}
       className={elementClasses}
-      activeClassName="!text-black dark:!text-white lg:after:!scale-x-100"
+      activeClassName={clsx(
+        "!text-black dark:!text-white lg:after:!scale-x-100",
+      )}
     >
       {children}
     </Link>

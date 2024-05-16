@@ -1,14 +1,14 @@
 export const socialMediaLinks = [
   {
     label: "Twitter",
-    url: "https://twitter.com/iamsebh",
+    url: "https://twitter.com/serkfi",
   },
   {
     label: "Github",
-    url: "https://github.com/shamalainen",
+    url: "https://github.com/serkfi",
   },
   {
     label: "LinkedIn",
-    url: "https://linkedin.com/in/sebastianhamalainen/",
+    url: "https://linkedin.com/in/sebastianrickert/",
   },
 ];

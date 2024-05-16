@@ -1,8 +1,10 @@
+import { PortableText } from "next-sanity";
+
 import { Container } from "@/blocks/Container";
 import { Hero } from "@/blocks/Hero/Hero";
 import { HeroLead } from "@/blocks/Hero/HeroLead";
-import { EnchancedPortableText } from "@/blocks/PortableText/EnchancedPortableText";
 import { SanityImage } from "@/blocks/SanityImage";
+import { customPortableTextComponents } from "@/constants/customPortableTextComponents";
 import { Icon } from "@/elements/Icon/Icon";
 import { ArticleDto } from "@/types/ArticleDto";
 import { ShowcaseDto } from "@/types/ShowcaseDto";
@@ -32,15 +34,12 @@ export const Article = ({
           </time>
         )}
       </Hero>
-      <Container>
-        <section className="prose prose-xl prose-blue mx-auto w-full max-w-screen-md dark:prose-invert">
-          {image && (
-            <div className="-mx-8 md:-mx-10 lg:-mx-16">
-              <SanityImage {...image} />
-            </div>
-          )}
-          <EnchancedPortableText value={content} />
-        </section>
+      <Container className="grid gap-12 sm:gap-16 lg:gap-24">
+        {image && <SanityImage {...image} />}
+        <PortableText
+          value={content}
+          components={customPortableTextComponents}
+        />
       </Container>
     </article>
   );

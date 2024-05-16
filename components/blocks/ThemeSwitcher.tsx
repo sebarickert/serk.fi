@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 
 import { Icon } from "@/elements/Icon/Icon";
 
-const useLocalStorage = (value) => {
+const useLocalStorage = (
+  value: string | undefined,
+): [string | undefined, (value: any) => void, boolean] => {
   const [intialized, setIntialized] = useState(false);
 
   const [storedValue, setStoredValue] = useState(() => {
@@ -18,7 +20,7 @@ const useLocalStorage = (value) => {
     }
   });
 
-  const setValue = (value) => {
+  const setValue = (value: any) => {
     try {
       const valueToStore =
         value instanceof Function ? value(storedValue) : value;

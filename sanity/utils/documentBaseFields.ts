@@ -1,4 +1,4 @@
-import { defineField } from "sanity";
+import { defineArrayMember, defineField } from "sanity";
 
 import { slugWithType } from "./slugWithType";
 
@@ -32,5 +32,24 @@ export const documentBaseFields = ({
     name: "summary",
     type: "text",
     validation: (Rule) => Rule.required(),
+  }),
+  defineField({
+    name: "content",
+    title: "Content",
+    type: "array",
+    of: [
+      defineArrayMember({
+        type: "portableText",
+        name: "portableText",
+      }),
+      defineArrayMember({
+        type: "showcaseListing",
+        name: "showcaseListing",
+      }),
+      defineArrayMember({
+        type: "articleListing",
+        name: "articleListing",
+      }),
+    ],
   }),
 ];
