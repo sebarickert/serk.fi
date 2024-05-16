@@ -2,6 +2,7 @@ import { article } from "./schemas/documents/article";
 import { navigation } from "./schemas/documents/navigation";
 import { page } from "./schemas/documents/page";
 import { showcase } from "./schemas/documents/showcase";
+import { articleListing } from "./schemas/objects/articleListing";
 import { link } from "./schemas/objects/link";
 import { navigationItem } from "./schemas/objects/navigationItem";
 import { portableText } from "./schemas/objects/portableText";
@@ -16,4 +17,5 @@ export const schemaTypes = [
   navigationItem,
   portableText,
   showcaseListing,
+  articleListing,
 ];

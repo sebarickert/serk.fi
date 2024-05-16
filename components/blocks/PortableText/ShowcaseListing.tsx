@@ -1,5 +1,4 @@
-import { ShowcaseTeaser } from "../ShowcaseTeaser";
-
+import { ShowcaseTeaser } from "@/blocks/ShowcaseTeaser";
 import { Heading } from "@/elements/Heading";
 import { ShowcaseDto } from "@/types/ShowcaseDto";
 

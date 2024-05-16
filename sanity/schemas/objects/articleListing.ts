@@ -1,8 +1,8 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
 
-export const showcaseListing = defineType({
-  name: "showcaseListing",
-  title: "Showcase listing",
+export const articleListing = defineType({
+  name: "articleListing",
+  title: "Article listing",
   type: "object",
   fields: [
     defineField({
@@ -17,18 +17,18 @@ export const showcaseListing = defineType({
       type: "string",
     }),
     defineField({
-      name: "showcases",
-      title: "Showcases",
+      name: "articles",
+      title: "Articles",
       type: "array",
       of: [
         defineArrayMember({
           type: "reference",
-          to: [{ type: "showcase" }],
+          to: [{ type: "article" }],
         }),
       ],
     }),
   ],
   initialValue: {
-    title: "Showcase Listing",
+    title: "Article Listing",
   },
 });

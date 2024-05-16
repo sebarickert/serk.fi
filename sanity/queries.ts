@@ -13,7 +13,13 @@ export const pageQuery = groq`*[_type == "page" && slug.current == $slug][0]{
     ...,
     _type == 'showcaseListing' => {
       ...,
-      showcases[]->
+      "title": label,
+      "showcases": select(length(showcases) > 0 => showcases[]->, *[_type == 'showcase'] | order(published desc))
+    },
+    _type == 'articleListing' => {
+      ...,
+      "title": label,
+      "articles": select(length(articles) > 0 => articles[]->, *[_type == 'article'] | order(published desc))
     }
   }
 }`;
@@ -23,5 +29,5 @@ export const articleQuery = groq`*[_type == "article" && slug.current == $slug][
 export const showcaseQuery = groq`*[_type == "showcase" && slug.current == $slug][0]`;
 
 export const pagesQuery = groq`*[_type == 'page']`;
-export const showcasesQuery = groq`*[_type == 'showcase']`;
-export const articlesQuery = groq`*[_type == 'article']`;
+export const showcasesQuery = groq`*[_type == 'showcase'] | order(published desc)`;
+export const articlesQuery = groq`*[_type == 'article'] | order(published desc)`;

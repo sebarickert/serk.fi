@@ -22,6 +22,10 @@ export const page = defineType({
           type: "showcaseListing",
           name: "showcaseListing",
         }),
+        defineArrayMember({
+          type: "articleListing",
+          name: "articleListing",
+        }),
       ],
     }),
   ],
