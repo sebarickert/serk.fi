@@ -11,8 +11,8 @@ type RootLayoutProps = {
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Sebastian",
-    default: "Welcome | Sebastian",
+    template: "%s | SERK",
+    default: "Hi there! | SERK",
   },
   icons: {
     icon: { url: "/favicon.ico" },
