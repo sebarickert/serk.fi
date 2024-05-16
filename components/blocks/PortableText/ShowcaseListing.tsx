@@ -1,3 +1,5 @@
+import { PortableTextTypeComponentProps } from "@portabletext/react";
+
 import { ShowcaseTeaser } from "@/blocks/ShowcaseTeaser";
 import { Heading } from "@/elements/Heading";
 import { ShowcaseDto } from "@/types/ShowcaseDto";
@@ -7,7 +9,9 @@ type ShowcaseListingProps = {
   showcases: ShowcaseDto[];
 };
 
-export const ShowcaseListing = ({ title, showcases }: ShowcaseListingProps) => {
+export const ShowcaseListing = ({
+  value: { title, showcases },
+}: PortableTextTypeComponentProps<ShowcaseListingProps>) => {
   return (
     <section>
       {title && <Heading className="mb-8 lg:mb-12">{title}</Heading>}

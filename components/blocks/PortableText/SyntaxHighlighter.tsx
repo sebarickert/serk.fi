@@ -1,3 +1,4 @@
+import { PortableTextTypeComponentProps } from "@portabletext/react";
 import { Highlight, Language, themes } from "prism-react-renderer";
 
 type SyntaxHighlighterProps = {
@@ -6,9 +7,8 @@ type SyntaxHighlighterProps = {
 };
 
 export const SyntaxHighlighter = ({
-  code,
-  language,
-}: SyntaxHighlighterProps) => {
+  value: { code, language },
+}: PortableTextTypeComponentProps<SyntaxHighlighterProps>) => {
   return (
     <Highlight theme={themes.nightOwl} code={code} language={language}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (

@@ -1,3 +1,5 @@
+import { PortableTextTypeComponentProps } from "@portabletext/react";
+
 import { ArticleTeaser } from "@/blocks/ArticleTeaser";
 import { Heading } from "@/elements/Heading";
 import { ArticleDto } from "@/types/ArticleDto";
@@ -7,7 +9,9 @@ type ArticleListingProps = {
   articles: ArticleDto[];
 };
 
-export const ArticleListing = ({ title, articles }: ArticleListingProps) => {
+export const ArticleListing = ({
+  value: { title, articles },
+}: PortableTextTypeComponentProps<ArticleListingProps>) => {
   return (
     <section>
       {title && <Heading className="mb-8 lg:mb-12">{title}</Heading>}

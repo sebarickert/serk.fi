@@ -1,25 +1,30 @@
-"use client";
+import {
+  PortableText,
+  PortableTextProps,
+  PortableTextReactComponents,
+  PortableTextTypeComponentProps,
+} from "@portabletext/react";
 
-import { PortableText, PortableTextReactComponents } from "@portabletext/react";
-
+import { SyntaxHighlighter } from "@/blocks/PortableText/SyntaxHighlighter";
 import { SanityImage } from "@/blocks/SanityImage";
-import { SyntaxHighlighter } from "@/blocks/SyntaxHighlighter";
 
 const components: Partial<PortableTextReactComponents> = {
   types: {
-    code: ({ value }) => <SyntaxHighlighter {...value} />,
-    image: ({ value }) => (
-      <div className="-mx-8 md:-mx-10 lg:-mx-16">
-        <SanityImage {...value} />
-      </div>
-    ),
+    code: SyntaxHighlighter,
+    image: ({ value }) => <SanityImage {...value} />,
   },
 };
 
-export const EnchancedPortableText = ({ value }: { value: any }) => {
+type EnchancedPortableTextProps = {
+  content: PortableTextProps["value"];
+};
+
+export const EnchancedPortableText = ({
+  value: { content },
+}: PortableTextTypeComponentProps<EnchancedPortableTextProps>) => {
   return (
     <section className="prose prose-xl prose-blue mx-auto w-full max-w-screen-md dark:prose-invert">
-      <PortableText value={value} components={components} />
+      <PortableText value={content} components={components} />
     </section>
   );
 };
