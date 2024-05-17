@@ -23,4 +23,11 @@ export const showcase = defineType({
       ],
     }),
   ],
+  orderings: [
+    {
+      title: "Published",
+      name: "publishedDesc",
+      by: [{ field: "published", direction: "desc" }],
+    },
+  ],
 });

@@ -8,4 +8,11 @@ export const page = defineType({
   type: "document",
   fieldsets: [{ name: "dates", title: "Dates", options: { columns: 2 } }],
   fields: [...documentBaseFields()],
+  orderings: [
+    {
+      title: "Published",
+      name: "publishedDesc",
+      by: [{ field: "published", direction: "desc" }],
+    },
+  ],
 });

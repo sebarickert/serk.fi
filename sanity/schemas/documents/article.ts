@@ -23,4 +23,11 @@ export const article = defineType({
       ],
     }),
   ],
+  orderings: [
+    {
+      title: "Published",
+      name: "publishedDesc",
+      by: [{ field: "published", direction: "desc" }],
+    },
+  ],
 });
