@@ -7,6 +7,8 @@ export const menuItemsQuery = groq`
     }
   `;
 
+export const allPublishedRoutesQuery = groq`*[_type in ["page", 'article', 'showcase'] && defined(slug.current) && !(_id in path('drafts.**'))][].slug.current`;
+
 export const pageQuery = groq`*[_type == "page" && slug.current == $slug][0]{
   ...,
   content[]{

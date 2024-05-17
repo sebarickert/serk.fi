@@ -1,9 +1,8 @@
-import { groq } from "next-sanity";
-
 import { sanityClient } from "@/constants/sanityClient";
 import { QUERY_TYPE } from "@/constants/types";
 import { Article } from "@/layouts/Article";
 import { BasicPage } from "@/layouts/BasicPage";
+import { allPublishedRoutesQuery } from "@/sanity/queries";
 import { getQueryFromSlug } from "@/utils/getQueryFromSlug";
 
 type PageProps = {
@@ -28,7 +27,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 export async function generateStaticParams() {
   const pageQueries: string[] = await sanityClient.fetch(
-    groq`*[_type in ["page", 'article', 'showcase'] && defined(slug.current)][].slug.current`,
+    allPublishedRoutesQuery,
   );
 
   return pageQueries.map((slug) => ({
