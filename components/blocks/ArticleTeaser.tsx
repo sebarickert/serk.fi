@@ -15,16 +15,16 @@ export const ArticleTeaser = ({
     summaryRaw.length > 140 ? `${summaryRaw.slice(0, 140)}...` : summaryRaw;
 
   const teaserClasses = clsx(
-    "group relative border h-full p-6 rounded-md",
+    "group relative h-full p-6",
     "flex flex-col",
-    "theme-layer-color-with-hover theme-border-secondary theme-text-primary",
+    "theme-layer-color-with-hover theme-text-primary",
   );
 
   return (
     <article className={teaserClasses}>
       <time
         dateTime={formatDateToISODate(published)}
-        className="theme-text-secondary mb-4 inline-flex items-center gap-2 text-base font-medium"
+        className="theme-text-secondary mb-6 inline-flex items-center gap-2 text-base font-medium"
       >
         <span className="sr-only">Published on</span>
         <Icon type="pencil" />
@@ -34,7 +34,7 @@ export const ArticleTeaser = ({
       <p className="mb-auto mt-3 text-base">{summary}</p>
       <Link
         href={slug}
-        className="theme-link-without-focus mt-6 inline-flex items-center gap-2 text-base font-medium outline-none duration-200 group-hover:ml-1"
+        className="theme-link-without-focus mt-8 inline-flex items-center gap-2 text-base font-medium outline-none duration-200 group-hover:ml-1"
         aria-label={`Read article - ${title}`}
         title={`Read article - ${title}`}
       >
