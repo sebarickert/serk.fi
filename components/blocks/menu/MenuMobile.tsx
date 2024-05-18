@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 import { Logo } from "../../elements/Logo";
 import { Container } from "../Container";
 
@@ -28,10 +30,12 @@ export const MenuMobile = ({
 
   return (
     <div
-      className={`fixed inset-0 z-10 overflow-y-auto lg:hidden ${!isMenuOpen ? "invisible" : ""}`}
+      className={clsx(`fixed inset-0 z-10 overflow-y-auto lg:hidden`, {
+        invisible: !isMenuOpen,
+      })}
       aria-hidden={!isMenuOpen}
     >
-      <div className="fixed inset-0 bg-gray-500 opacity-75 dark:bg-gray-800"></div>
+      <div className={clsx("serk-backdrop fixed inset-0")}></div>
       <div
         id="menuMobileBackdrop"
         className={`relative flex min-h-screen transform flex-col pb-20 transition duration-150 ${
@@ -40,10 +44,10 @@ export const MenuMobile = ({
       >
         <div
           id="menuMobileBase"
-          className="rounded-b-lg bg-white shadow-xl dark:bg-neutral-900"
+          className={clsx("serk-background rounded-b-lg shadow-xl")}
         >
           <div className="mb-6">
-            <Container className="border-b border-gray-200 py-8 dark:border-neutral-800">
+            <Container className={clsx("serk-border border-b py-8")}>
               <Logo />
             </Container>
           </div>

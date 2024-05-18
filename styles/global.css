@@ -9,4 +9,72 @@
     font-style: normal;
     src: url("/fonts/InterVariable.ttf") format("truetype");
   }
+
+  .serk-background {
+    @apply dark:bg-gray-1000 bg-white;
+  }
+
+  .serk-background-inverted {
+    @apply bg-gray-1000 dark:bg-white;
+  }
+
+  .serk-background-hover {
+    @apply hover:bg-gray-500/[0.12] dark:hover:bg-gray-500/[0.16];
+  }
+
+  .serk-secondary-background {
+    @apply bg-gray-100 dark:bg-gray-900;
+  }
+
+  .serk-secondary-background-hover {
+    @apply hover:bg-gray-100/50 dark:hover:bg-gray-900/50;
+  }
+
+  .serk-text {
+    @apply text-gray-1000 dark:text-gray-100;
+  }
+
+  .serk-secondary-text {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+
+  .serk-border {
+    @apply border-gray-200 dark:border-gray-800;
+  }
+
+  .serk-secondary-border {
+    @apply border-gray-300 dark:border-gray-800;
+  }
+
+  .serk-backdrop {
+    @apply bg-gray-1000/50 dark:bg-gray-100/50;
+  }
+
+  .serk-button {
+    @apply bg-blue-600 text-white hover:bg-blue-700 focus:bg-blue-900;
+  }
+
+  .serk-focus-base {
+    @apply outline-none ring ring-blue-600 dark:ring-white;
+  }
+
+  .serk-focus {
+    @apply focus:serk-focus-base;
+  }
+
+  .serk-main-menu {
+    @apply text-gray-1000/50 hover:text-gray-1000 dark:text-gray-100/50 dark:hover:text-gray-100;
+  }
+
+  .serk-main-menu-active {
+    @apply !text-gray-1000 dark:!text-gray-100;
+  }
+
+  .serk-link-base {
+    @apply text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300;
+  }
+
+  .serk-link {
+    @apply serk-focus serk-link-base;
+  }
 }

@@ -11,7 +11,7 @@ export const Logo = ({ size = defaultSize }: LogoProps) => {
       viewBox="0 0 500 354"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="fill-black dark:fill-white"
+      className="fill-gray-1000 dark:fill-gray-100"
     >
       <path
         fillRule="evenodd"

@@ -15,33 +15,34 @@ export const ArticleTeaser = ({
     summaryRaw.length > 140 ? `${summaryRaw.slice(0, 140)}...` : summaryRaw;
 
   const teaserClasses = clsx(
-    "group relative bg-gray-50 border h-full p-6 rounded-md",
+    "group relative border h-full p-6 rounded-md",
     "flex flex-col",
-    "hover:bg-gray-100",
-    "focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600",
+    "serk-secondary-background serk-secondary-background-hover serk-secondary-border serk-text",
   );
 
   return (
     <article className={teaserClasses}>
       <time
         dateTime={formatDateToISODate(published)}
-        className="mb-4 inline-flex items-center gap-2 text-base font-medium text-gray-500"
+        className="serk-secondary-text mb-4 inline-flex items-center gap-2 text-base font-medium"
       >
         <span className="sr-only">Published on</span>
         <Icon type="pencil" />
         <span>{formatDateToFull(published)}</span>
       </time>
       <h2 className="text-2xl font-semibold">{title}</h2>
-      <p className="mb-auto mt-3 text-base text-gray-700">{summary}</p>
+      <p className="mb-auto mt-3 text-base">{summary}</p>
       <Link
         href={slug}
-        className="mt-6 inline-flex items-center gap-2 text-base font-medium text-gray-500 outline-none duration-200 group-hover:ml-1"
+        className="serk-link-base mt-6 inline-flex items-center gap-2 text-base font-medium outline-none duration-200 group-hover:ml-1"
         aria-label={`Read article - ${title}`}
         title={`Read article - ${title}`}
       >
         <span className="absolute inset-0" aria-hidden="true"></span>
-        <span>Read article</span>
-        <Icon type="arrow-right" />
+        <span className="group-focus-within:serk-focus-base inline-flex items-center gap-2">
+          <span>Read article</span>
+          <Icon type="arrow-right" />
+        </span>
       </Link>
     </article>
   );

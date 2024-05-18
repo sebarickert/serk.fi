@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 type MenuToggleProps = {
   isMenuOpen: boolean;
   handleMenuToggle(): void;
@@ -16,7 +18,9 @@ export const MenuToggle = ({
 
   return (
     <button
-      className="fixed bottom-4 right-4 z-50 block h-12 w-12 rounded-full bg-blue-600 text-white shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 lg:hidden"
+      className={clsx(
+        "serk-focus serk-button fixed bottom-4 right-4 z-50 block h-12 w-12 rounded-full shadow-md lg:hidden",
+      )}
       aria-label={isMenuOpen ? "Close site navigation" : "Open site navigation"}
       aria-expanded={!!isMenuOpen}
       type="button"

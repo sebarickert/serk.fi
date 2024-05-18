@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { ReactNode } from "react";
 
 import { Footer } from "@/blocks/Footer";
@@ -8,7 +9,7 @@ type LayoutProps = {
 };
 
 export const Layout = ({ children }: LayoutProps) => (
-  <div className="flex min-h-screen flex-col dark:bg-neutral-900">
+  <div className={clsx("serk-background flex min-h-screen flex-col")}>
     <div className="flex-grow">
       <Header />
       <main className="pb-20 lg:pb-32">{children}</main>

@@ -1,5 +1,6 @@
 "use client";
 
+import clsx from "clsx";
 import { useEffect, useState } from "react";
 
 import { Icon } from "@/elements/Icon/Icon";
@@ -89,9 +90,9 @@ export const ThemeSwitcher = () => {
   return (
     <button
       onClick={handleClick}
-      className={`ml-8 inline-flex h-12 w-12 items-center justify-center rounded-full ring-offset-2 focus:ring ${
-        isLightTheme ? "bg-black" : "bg-white"
-      }`}
+      className={clsx(
+        `serk-background-inverted serk-focus ml-8 inline-flex h-12 w-12 items-center justify-center rounded-full`,
+      )}
       title={`Switch to ${!isLightTheme ? "light" : "dark"} theme`}
     >
       {!isLightTheme ? (

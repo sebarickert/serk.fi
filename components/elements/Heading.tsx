@@ -15,7 +15,7 @@ export const Heading = ({
 
   return (
     <HeadingType
-      className={`!font-bold !leading-tight tracking-tighter text-gray-900 dark:text-white ${className}
+      className={`serk-text !font-bold !leading-tight tracking-tighter ${className}
         ${style === "h1" ? "text-5xl sm:text-6xl sm:!font-extrabold lg:text-7xl" : ""}
         ${style === "h2" ? "text-3xl sm:text-4xl lg:text-5xl" : ""}
         ${style === "h3" ? "text-2xl sm:text-3xl lg:text-4xl" : ""}
