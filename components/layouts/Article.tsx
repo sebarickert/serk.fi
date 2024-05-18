@@ -26,7 +26,7 @@ export const Article = ({
         {published && (
           <time
             dateTime={formatDateToISODate(published)}
-            className="serk-secondary-text mt-8 inline-flex items-center gap-2 text-base font-medium"
+            className="theme-text-secondary mt-8 inline-flex items-center gap-2 text-base font-medium"
           >
             <span className="sr-only">Published on</span>
             <Icon type="pencil" />

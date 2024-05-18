@@ -24,14 +24,14 @@ export const EnchancedPortableText = ({
   value: { content },
 }: PortableTextTypeComponentProps<EnchancedPortableTextProps>) => {
   const proseStyleOverrides = clsx(
-    "prose-a:serk-link",
-    "prose-headings:serk-text",
-    "prose-p:serk-text",
-    "prose-ul:serk-text",
-    "prose-ol:serk-text",
-    "prose-li:serk-text",
-    "prose-strong:serk-text",
-    "prose-blockquote:serk-text",
+    "prose-a:theme-link",
+    "prose-headings:theme-text-primary",
+    "prose-p:theme-text-primary",
+    "prose-ul:theme-text-primary",
+    "prose-ol:theme-text-primary",
+    "prose-li:theme-text-primary",
+    "prose-strong:theme-text-primary",
+    "prose-blockquote:theme-text-primary",
   );
 
   return (

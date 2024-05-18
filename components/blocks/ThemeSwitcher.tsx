@@ -91,7 +91,7 @@ export const ThemeSwitcher = () => {
     <button
       onClick={handleClick}
       className={clsx(
-        `serk-background-inverted serk-focus ml-8 inline-flex h-12 w-12 items-center justify-center rounded-full`,
+        `theme-bg-color-inverted theme-focus ml-8 inline-flex h-12 w-12 items-center justify-center rounded-full`,
       )}
       title={`Switch to ${!isLightTheme ? "light" : "dark"} theme`}
     >

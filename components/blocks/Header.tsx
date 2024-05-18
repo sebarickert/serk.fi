@@ -6,9 +6,9 @@ import { MenuContainer } from "@/containers/MenuContainer";
 import { Logo } from "@/elements/Logo";
 
 export const Header = () => (
-  <header className="serk-background relative z-10">
+  <header className="theme-bg-color relative z-10">
     <Container className="flex items-center justify-between py-8 lg:py-12">
-      <Link href="/" className="serk-focus mr-auto inline-flex rounded">
+      <Link href="/" className="theme-focus mr-auto inline-flex rounded">
         <Logo />
       </Link>
       <MenuContainer />

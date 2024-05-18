@@ -4,7 +4,7 @@ import { socialMediaLinks } from "@/constants/socialMediaLinks";
 import { Heading } from "@/elements/Heading";
 
 export const Footer = () => (
-  <footer className="serk-secondary-background serk-text">
+  <footer className="theme-layer-color theme-text-primary">
     <Container>
       <Spacer>
         <section>
@@ -21,7 +21,7 @@ export const Footer = () => (
             </p>
           </div>
         </section>
-        <hr className="serk-secondary-border mb-5 mt-12 border-t" />
+        <hr className="theme-border-secondary mb-5 mt-12 border-t" />
         <section>
           <nav aria-label="Social media links" className="@container">
             <h2 className="sr-only">Follow me on social media</h2>
@@ -30,7 +30,7 @@ export const Footer = () => (
                 <li key={url}>
                   <a
                     href={url}
-                    className="serk-link inline-block py-2 text-lg font-normal"
+                    className="theme-link inline-block py-2 text-lg font-normal"
                     target="_blank"
                     rel="noreferrer"
                   >

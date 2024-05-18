@@ -9,7 +9,7 @@ type LayoutProps = {
 };
 
 export const Layout = ({ children }: LayoutProps) => (
-  <div className={clsx("serk-background flex min-h-screen flex-col")}>
+  <div className={clsx("theme-bg-color flex min-h-screen flex-col")}>
     <div className="flex-grow">
       <Header />
       <main className="pb-20 lg:pb-32">{children}</main>

@@ -19,7 +19,7 @@ export const MenuToggle = ({
   return (
     <button
       className={clsx(
-        "serk-focus serk-button fixed bottom-4 right-4 z-50 block h-12 w-12 rounded-full shadow-md lg:hidden",
+        "theme-button fixed bottom-4 right-4 z-50 block h-12 w-12 rounded-full shadow-md lg:hidden",
       )}
       aria-label={isMenuOpen ? "Close site navigation" : "Open site navigation"}
       aria-expanded={!!isMenuOpen}

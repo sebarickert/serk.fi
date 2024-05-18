@@ -35,7 +35,7 @@ export const MenuMobile = ({
       })}
       aria-hidden={!isMenuOpen}
     >
-      <div className={clsx("serk-backdrop fixed inset-0")}></div>
+      <div className={clsx("theme-backdrop fixed inset-0")}></div>
       <div
         id="menuMobileBackdrop"
         className={`relative flex min-h-screen transform flex-col pb-20 transition duration-150 ${
@@ -44,10 +44,10 @@ export const MenuMobile = ({
       >
         <div
           id="menuMobileBase"
-          className={clsx("serk-background rounded-b-lg shadow-xl")}
+          className={clsx("theme-bg-color rounded-b-lg shadow-xl")}
         >
           <div className="mb-6">
-            <Container className={clsx("serk-border border-b py-8")}>
+            <Container className={clsx("theme-border-primary border-b py-8")}>
               <Logo />
             </Container>
           </div>
