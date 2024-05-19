@@ -1,7 +1,5 @@
 import { sanityClient } from "@/constants/sanityClient";
-import { QUERY_TYPE } from "@/constants/types";
-import { Article } from "@/layouts/Article";
-import { BasicPage } from "@/layouts/BasicPage";
+import { PageTypeSwitcherContainer } from "@/containers/PageTypeSwitcherContainer";
 import { allPublishedRoutesQuery } from "@/sanity/queries";
 import { getQueryFromSlug } from "@/utils/getQueryFromSlug";
 
@@ -44,13 +42,7 @@ async function getPageData(params: PageProps["params"]) {
 }
 
 export default async function Page({ params }: PageProps) {
-  const { type, data } = await getPageData(params);
+  const data = await getPageData(params);
 
-  switch (type) {
-    case QUERY_TYPE.BLOG:
-    case QUERY_TYPE.PORTFOLIO:
-      return <Article {...data} />;
-    default:
-      return <BasicPage {...data} />;
-  }
+  return <PageTypeSwitcherContainer {...data} />;
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import { PortableText } from "next-sanity";
 
 import { Container } from "@/blocks/Container";

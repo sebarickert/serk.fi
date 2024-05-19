@@ -18,16 +18,28 @@ export const SyntaxHighlighter = ({
             style={{ ...style }}
           >
             <code className="inline-block min-w-full">
-              {tokens.slice(0, -1).map((line, i) => (
-                <div key={i} {...getLineProps({ line, key: i })}>
-                  <span className="inline-block w-8 opacity-30">{i + 1}</span>
-                  <span>
-                    {line.map((token, key) => (
-                      <span key={key} {...getTokenProps({ token, key })} />
-                    ))}
-                  </span>
-                </div>
-              ))}
+              {tokens.slice(0, -1).map((line, i) => {
+                const tokenProps = getLineProps({ line, key: i });
+                delete tokenProps.key;
+
+                return (
+                  <div key={i} {...tokenProps}>
+                    <span className="inline-block w-8 opacity-30">{i + 1}</span>
+                    <span>
+                      {line.map((token, key) => {
+                        let lineProps = getTokenProps({
+                          token,
+                          key,
+                        });
+
+                        delete lineProps.key;
+
+                        return <span key={key} {...lineProps} />;
+                      })}
+                    </span>
+                  </div>
+                );
+              })}
             </code>
           </pre>
         </div>
