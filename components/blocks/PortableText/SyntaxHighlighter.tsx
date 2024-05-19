@@ -18,7 +18,7 @@ export const SyntaxHighlighter = ({
             style={{ ...style }}
           >
             <code className="inline-block min-w-full">
-              {tokens.slice(0, -1).map((line, i) => {
+              {tokens.map((line, i) => {
                 const tokenProps = getLineProps({ line, key: i });
                 delete tokenProps.key;
 
