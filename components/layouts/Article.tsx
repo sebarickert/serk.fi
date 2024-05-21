@@ -28,7 +28,7 @@ export const Article = ({
         {published && (
           <time
             dateTime={formatDateToISODate(published)}
-            className="theme-text-secondary mt-8 inline-flex items-center gap-2 text-base font-medium"
+            className="inline-flex items-center gap-2 mt-8 text-base font-medium theme-text-secondary"
           >
             <span className="sr-only">Published on</span>
             <Icon type="pencil" />
@@ -36,7 +36,7 @@ export const Article = ({
           </time>
         )}
       </Hero>
-      <Container className="grid gap-12 sm:gap-16 lg:gap-24">
+      <Container className="grid grid-cols-1 gap-12 sm:gap-16 lg:gap-24">
         {image && <SanityImage {...image} />}
         <PortableText value={content} components={components} />
       </Container>
