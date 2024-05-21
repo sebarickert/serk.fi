@@ -3,13 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: "Inter";
-    font-display: swap;
-    font-style: normal;
-    src: url("/fonts/InterVariable.ttf") format("truetype");
-  }
-
   .theme-bg-color {
     @apply bg-white dark:bg-gray-1000;
   }

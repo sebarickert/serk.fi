@@ -24,6 +24,9 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
+        <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
+      </body>
+      <body>
         <Layout>{children}</Layout>
         <SpeedInsights />
       </body>
