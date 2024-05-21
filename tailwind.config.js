@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const { colors } = require("@carbon/colors");
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 const carbonColors = Object.keys(colors).reduce((acc, color) => {
   if (Object.keys(colors[color]).length === 1) {
@@ -36,5 +37,11 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/container-queries"),
+    plugin(function ({ addVariant }) {
+      addVariant(
+        "prose-inline-code",
+        '&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *))',
+      );
+    }),
   ],
 };

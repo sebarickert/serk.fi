@@ -32,6 +32,7 @@ export const EnchancedPortableText = ({
     "prose-li:theme-text-primary",
     "prose-strong:theme-text-primary",
     "prose-blockquote:theme-text-primary",
+    "prose-inline-code:theme-inline-code",
   );
 
   return (
