@@ -14,7 +14,7 @@ export const ShowcaseListing = ({
 }: PortableTextTypeComponentProps<ShowcaseListingProps>) => {
   return (
     <section>
-      {title && <Heading className="mb-8 lg:mb-12">{title}</Heading>}
+      {title && <Heading withBottomMargin>{title}</Heading>}
       <ul className="grid gap-16">
         {showcases.map((showcase, index) => (
           <li key={showcase._id}>

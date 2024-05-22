@@ -9,7 +9,7 @@ export const Footer = () => (
       <Spacer>
         <section>
           <div>
-            <Heading style="h2" className="mb-6 sm:!text-4xl">
+            <Heading style="h3" withBottomMargin>
               Contact
             </Heading>
             <p className="mb-4 max-w-screen-sm text-xl !leading-relaxed tracking-normal">

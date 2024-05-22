@@ -6,7 +6,5 @@ type SpacerProps = {
 };
 
 export const Spacer = ({ children, className }: SpacerProps) => {
-  return (
-    <div className={clsx("py-12 sm:py-16 lg:py-24", className)}>{children}</div>
-  );
+  return <div className={clsx("py-12 lg:py-24", className)}>{children}</div>;
 };

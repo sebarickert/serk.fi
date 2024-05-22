@@ -14,7 +14,7 @@ export const ArticleListing = ({
 }: PortableTextTypeComponentProps<ArticleListingProps>) => {
   return (
     <section>
-      {title && <Heading className="mb-8 lg:mb-12">{title}</Heading>}
+      {title && <Heading withBottomMargin>{title}</Heading>}
       <ul className="grid gap-8 lg:grid-cols-2">
         {articles.map((article) => (
           <li key={article._id}>

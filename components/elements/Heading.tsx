@@ -7,6 +7,7 @@ type HeadingProps = {
   style?: HeadingType;
   children: string;
   className?: string;
+  withBottomMargin?: boolean;
 };
 
 export const Heading = ({
@@ -14,6 +15,7 @@ export const Heading = ({
   style = variant,
   children,
   className = "",
+  withBottomMargin,
 }: HeadingProps) => {
   const HeadingType = variant;
 
@@ -27,6 +29,8 @@ export const Heading = ({
         ["text-2xl lg:text-3xl"]: style === "h3",
         ["text-2xl font-light !leading-normal md:text-3xl lg:text-4xl xl:text-5xl"]:
           style === "p",
+        ["mb-4 lg:mb-8"]: withBottomMargin && style === "h2",
+        ["mb-2 lg:mb-4"]: withBottomMargin && style === "h3",
       })}
     >
       {children}
