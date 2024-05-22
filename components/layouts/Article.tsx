@@ -1,10 +1,7 @@
-"use client";
-
 import { PortableText } from "next-sanity";
 
 import { Container } from "@/blocks/Container";
-import { Hero } from "@/blocks/Hero/Hero";
-import { HeroLead } from "@/blocks/Hero/HeroLead";
+import { Hero } from "@/blocks/Hero";
 import { components } from "@/blocks/PortableText/components";
 import { SanityImage } from "@/blocks/SanityImage";
 import { Icon } from "@/elements/Icon/Icon";
@@ -23,12 +20,11 @@ export const Article = ({
 }: ArticleProps) => {
   return (
     <article>
-      <Hero title={title}>
-        <HeroLead>{summary ?? ""}</HeroLead>
+      <Hero heading={title} subheading={summary ?? ""}>
         {published && (
           <time
             dateTime={formatDateToISODate(published)}
-            className="inline-flex items-center gap-2 mt-8 text-base font-medium theme-text-secondary"
+            className="theme-text-secondary mt-8 inline-flex items-center gap-2 text-base font-medium"
           >
             <span className="sr-only">Published on</span>
             <Icon type="pencil" />
