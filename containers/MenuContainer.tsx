@@ -10,5 +10,9 @@ async function getNavigationItems(): Promise<NavigationItemDto[]> {
 export const MenuContainer = async () => {
   const items = await getNavigationItems();
 
+  if (!items) {
+    return null;
+  }
+
   return <Menu items={items} />;
 };
