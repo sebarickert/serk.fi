@@ -35,8 +35,12 @@ export async function generateStaticParams() {
 
 async function getPageData(params: PageProps["params"]) {
   const { slug } = params;
-  const { query, queryParams, type } = getQueryFromSlug(slug);
-  const data = await sanityClient.fetch(query, queryParams);
+  const { query, queryParams, type, tags } = getQueryFromSlug(slug);
+  const data = await sanityClient.fetch(query, queryParams, {
+    cache:
+      process.env.ENVIRONMENT === "development" ? "no-store" : "force-cache",
+    next: { tags },
+  });
 
   return { type, data };
 }

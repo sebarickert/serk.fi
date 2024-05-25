@@ -7,6 +7,7 @@ export const getQueryFromSlug = (
   query: string;
   queryParams: Record<string, string>;
   type: QUERY_TYPE;
+  tags?: string[];
 } => {
   let type = QUERY_TYPE.PAGE;
 
@@ -21,6 +22,7 @@ export const getQueryFromSlug = (
       query: queries[QUERY_TYPE.PAGE],
       queryParams: { slug: "/" },
       type: QUERY_TYPE.PAGE,
+      tags: [QUERY_TYPE.PAGE],
     };
   }
 
@@ -37,5 +39,5 @@ export const getQueryFromSlug = (
     type = QUERY_TYPE[slugStart.toUpperCase() as keyof typeof QUERY_TYPE];
   }
 
-  return { query: queries[type], queryParams, type };
+  return { query: queries[type], queryParams, type, tags: [type] };
 };

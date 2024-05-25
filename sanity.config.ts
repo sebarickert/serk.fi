@@ -7,8 +7,9 @@ import { schemaTypes } from "@/sanity/schemaTypes";
 
 export const config = defineConfig({
   projectId: "kj6xg0lj",
-  dataset: "production",
-  title: "serk.fi",
+  dataset:
+    process.env.ENVIRONMENT === "development" ? "development" : "production",
+  title: "SERK Studio",
   basePath: "/studio",
 
   plugins: [structureTool(), visionTool(), codeInput()],
