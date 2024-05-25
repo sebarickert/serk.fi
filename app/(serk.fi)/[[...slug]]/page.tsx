@@ -11,8 +11,12 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = params;
-  const { query, queryParams } = getQueryFromSlug(slug);
-  const data = await sanityClient.fetch(query, queryParams);
+  const { query, queryParams, tags } = getQueryFromSlug(slug);
+  const data = await sanityClient.fetch(query, queryParams, {
+    cache:
+      process.env.ENVIRONMENT === "development" ? "no-store" : "force-cache",
+    next: { tags },
+  });
 
   if (!data?.title) {
     return;
