@@ -1,9 +1,7 @@
 import clsx from "clsx";
+import Link from "next/link";
 
-import { Logo } from "../../elements/Logo";
-import { Container } from "../Container";
-
-import { MenuLink } from "./MenuLink";
+import { ThemeSwitcher } from "../ThemeSwitcher";
 
 import { NavigationItemDto } from "@/types/NavigationItemDto";
 
@@ -11,12 +9,14 @@ type MenuMobileProps = {
   isMenuOpen: boolean;
   handleMenuToggle(): void;
   items: NavigationItemDto[];
+  className?: string;
 };
 
 export const MenuMobile = ({
   isMenuOpen,
   handleMenuToggle,
   items,
+  className,
 }: MenuMobileProps) => {
   const handleOutsideClick = (event: MouseEvent): void => {
     const { target } = event;
@@ -30,12 +30,20 @@ export const MenuMobile = ({
 
   return (
     <div
-      className={clsx(`fixed inset-0 z-10 overflow-y-auto lg:hidden`, {
-        invisible: !isMenuOpen,
-      })}
+      className={clsx(
+        `fixed -bottom-[102px] left-0 right-0 top-[102px] z-10 overflow-y-auto`,
+        {
+          invisible: !isMenuOpen,
+        },
+        className,
+      )}
       aria-hidden={!isMenuOpen}
     >
-      <div className={clsx("theme-backdrop fixed inset-0")}></div>
+      <div
+        className={clsx(
+          "theme-backdrop fixed -bottom-[102px] left-0 right-0 top-[102px]",
+        )}
+      ></div>
       <div
         id="menuMobileBackdrop"
         className={`relative flex min-h-screen transform flex-col pb-20 transition duration-150 ${
@@ -43,23 +51,24 @@ export const MenuMobile = ({
         }`}
       >
         <div
-          id="menuMobileBase"
-          className={clsx("theme-bg-color rounded-b-lg shadow-xl")}
+          className={clsx(
+            "theme-bg-color grid grid-cols-1 gap-10 rounded-b-lg pb-16 pt-[1px] shadow-xl",
+          )}
         >
-          <div className="mb-6">
-            <Container className={clsx("theme-border-primary border-b py-8")}>
-              <Logo />
-            </Container>
-          </div>
-          <Container>
-            <ul className="grid grid-cols-1 pb-8">
-              {items.map(({ title, slug }) => (
-                <li key={slug}>
-                  <MenuLink link={slug}>{title}</MenuLink>
-                </li>
-              ))}
-            </ul>
-          </Container>
+          <ul className="theme-divide-primary theme-border-primary grid grid-cols-1 divide-y border-b border-t">
+            {items.map(({ title, slug }) => (
+              <li key={slug}>
+                <Link
+                  href={slug}
+                  className="theme-main-menu-active theme-focus block p-6 text-xl"
+                  onClick={handleMenuToggle}
+                >
+                  {title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ThemeSwitcher className="mx-auto max-w-fit" />
         </div>
       </div>
     </div>

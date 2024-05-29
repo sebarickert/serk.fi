@@ -35,7 +35,7 @@ const useLocalStorage = (
   return [storedValue, setValue, intialized];
 };
 
-export const ThemeSwitcher = () => {
+export const ThemeSwitcher = ({ className }: { className?: string }) => {
   const [isMounted, setIsMounted] = useState(false);
   const [currentTheme, setCurrentTheme, isThemeLoaded] =
     useLocalStorage(undefined);
@@ -91,7 +91,10 @@ export const ThemeSwitcher = () => {
     <button
       onClick={handleClick}
       className={clsx(
-        `theme-bg-color-inverted theme-focus ml-8 inline-flex h-12 w-12 items-center justify-center rounded-full`,
+        `theme-bg-color-inverted max-lg:theme-focus-inverted lg:theme-focus inline-flex items-center justify-center gap-2`,
+        "max-lg:rounded-3xl max-lg:px-4 max-lg:py-3",
+        "lg:h-12 lg:w-12 lg:rounded-full",
+        className,
       )}
       title={`Switch to ${!isLightTheme ? "light" : "dark"} theme`}
     >
@@ -103,7 +106,7 @@ export const ThemeSwitcher = () => {
           className={`translate-x-px fill-white stroke-white`}
         />
       )}
-      <span className="sr-only">{`Switch to ${!isLightTheme ? "light" : "dark"} theme`}</span>
+      <span className="theme-text-primary-inverted lg:sr-only">{`Switch to ${!isLightTheme ? "light" : "dark"} theme`}</span>
     </button>
   );
 };

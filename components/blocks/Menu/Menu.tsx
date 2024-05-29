@@ -21,13 +21,18 @@ export const Menu = ({ items }: MenuProps) => {
 
   return (
     <nav>
-      <MenuToggle isMenuOpen={isMenuOpen} handleMenuToggle={handleMenuToggle} />
+      <MenuToggle
+        isMenuOpen={isMenuOpen}
+        handleMenuToggle={handleMenuToggle}
+        className="lg:hidden"
+      />
       <MenuMobile
         items={items}
         isMenuOpen={isMenuOpen}
         handleMenuToggle={handleMenuToggle}
+        className="lg:hidden"
       />
-      <MenuDesktop items={items} />
+      <MenuDesktop items={items} className="hidden lg:flex" />
     </nav>
   );
 };

@@ -1,14 +1,19 @@
+import clsx from "clsx";
+
+import { ThemeSwitcher } from "../ThemeSwitcher";
+
 import { MenuLink } from "./MenuLink";
 
 import { NavigationItemDto } from "@/types/NavigationItemDto";
 
 type MenuDesktopProps = {
   items: NavigationItemDto[];
+  className?: string;
 };
 
-export const MenuDesktop = ({ items }: MenuDesktopProps) => {
+export const MenuDesktop = ({ items, className }: MenuDesktopProps) => {
   return (
-    <div className={`hidden lg:-mr-4 lg:block`}>
+    <div className={clsx(`items-center gap-6`, className)}>
       <ul className={`flex gap-2`}>
         {items.map(({ title, slug }) => (
           <li key={slug}>
@@ -16,6 +21,7 @@ export const MenuDesktop = ({ items }: MenuDesktopProps) => {
           </li>
         ))}
       </ul>
+      <ThemeSwitcher />
     </div>
   );
 };

@@ -3,11 +3,13 @@ import clsx from "clsx";
 type MenuToggleProps = {
   isMenuOpen: boolean;
   handleMenuToggle(): void;
+  className?: string;
 };
 
 export const MenuToggle = ({
   isMenuOpen,
   handleMenuToggle,
+  className,
 }: MenuToggleProps) => {
   const toggleIconClasses = {
     active:
@@ -19,7 +21,8 @@ export const MenuToggle = ({
   return (
     <button
       className={clsx(
-        "theme-button fixed bottom-4 right-4 z-50 block h-12 w-12 rounded-full shadow-md lg:hidden",
+        "theme-border-primary theme-text-primary theme-focus relative inline-flex h-12 w-12 rounded-full border",
+        className,
       )}
       aria-label={isMenuOpen ? "Close site navigation" : "Open site navigation"}
       aria-expanded={!!isMenuOpen}
