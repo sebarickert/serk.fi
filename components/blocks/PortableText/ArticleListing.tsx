@@ -7,16 +7,23 @@ import { ArticleDto } from "@/types/ArticleDto";
 type ArticleListingProps = {
   title?: string;
   articles: ArticleDto[];
+  amount?: number;
 };
 
 export const ArticleListing = ({
-  value: { title, articles },
+  value: { title, articles, amount },
 }: PortableTextTypeComponentProps<ArticleListingProps>) => {
+  let articlesCopy = [...articles];
+
+  if (amount !== undefined) {
+    articlesCopy = articlesCopy.slice(0, amount);
+  }
+
   return (
     <section>
       {title && <Heading withBottomMargin>{title}</Heading>}
       <ul className="grid gap-8 lg:grid-cols-2">
-        {articles.map((article) => (
+        {articlesCopy.map((article) => (
           <li key={article._id}>
             <ArticleTeaser {...article} />
           </li>

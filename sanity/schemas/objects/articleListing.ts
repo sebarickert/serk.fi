@@ -27,6 +27,12 @@ export const articleListing = defineType({
         }),
       ],
     }),
+    defineField({
+      title: "Amount of articles",
+      name: "amount",
+      type: "number",
+      validation: (Rule) => Rule.positive().integer().min(1),
+    }),
   ],
   initialValue: {
     title: "Article Listing",
