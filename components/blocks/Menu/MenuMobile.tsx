@@ -60,7 +60,7 @@ export const MenuMobile = ({
               <li key={slug}>
                 <Link
                   href={slug}
-                  className="theme-main-menu-active theme-focus block p-6 text-xl"
+                  className="theme-main-menu-active theme-focus block p-6 text-xl md:px-10"
                   onClick={handleMenuToggle}
                 >
                   {title}
