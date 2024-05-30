@@ -8,29 +8,33 @@ export const Footer = () => (
     <Container>
       <Spacer>
         <section>
-          <div>
-            <Heading style="h3" withBottomMargin>
-              Contact
-            </Heading>
-            <p className="mb-4 max-w-screen-sm text-xl !leading-relaxed tracking-normal">
-              If you want to contact me, shoot me a message at contact@serk.fi
-              or find me on different social media platforms.
+          <div className="grid grid-cols-1 gap-4 lg:gap-6">
+            <Heading style="h3">Get in touch</Heading>
+            <p className="max-w-[500px] text-lg !leading-relaxed tracking-normal lg:text-xl">
+              For any questions, collaborations, or just to say hello, you can
+              reach me at{" "}
+              <a href="mailto:contact@serk.fi" className="theme-link">
+                contact@serk.fi
+              </a>
+              .
             </p>
-            <p className="max-w-screen-sm text-xl !leading-relaxed tracking-normal">
+            <p className="max-w-screen-sm text-lg !leading-relaxed tracking-normal lg:text-xl">
               {`© ${new Date().getFullYear()} SERK. All Rights Reserved.`}
             </p>
           </div>
         </section>
-        <hr className="theme-border-secondary mb-5 mt-12 border-t" />
+        <hr className="mt-12 mb-6 border-t theme-border-secondary" />
         <section>
-          <nav aria-label="Social media links" className="@container">
-            <h2 className="sr-only">Follow me on social media</h2>
-            <ul className="inline-grid auto-cols-auto grid-flow-col-dense gap-4">
+          <nav aria-labelledby="srHeading">
+            <h2 className="sr-only" id="srHeading">
+              Follow me on social media
+            </h2>
+            <ul className="inline-grid grid-flow-col-dense gap-4 auto-cols-auto">
               {socialMediaLinks.map(({ label, url }) => (
                 <li key={url}>
                   <a
                     href={url}
-                    className="theme-link inline-block py-2 text-lg font-normal"
+                    className="inline-block py-2 text-lg font-normal theme-link"
                     target="_blank"
                     rel="noreferrer"
                   >
