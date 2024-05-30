@@ -1,5 +1,4 @@
 import { Container } from "@/blocks/Container";
-import { Spacer } from "@/blocks/Spacer";
 import { Heading } from "@/elements/Heading";
 
 type HeroProps = {
@@ -9,15 +8,13 @@ type HeroProps = {
 };
 
 export const Hero = ({ heading, subheading, children }: HeroProps) => (
-  <div>
+  <div className="pt-6 pb-12 md:pt-12 lg:py-24">
     <Container>
-      <Spacer>
-        <div className="grid grid-cols-1 gap-4">
-          <Heading variant="h1">{heading}</Heading>
-          {subheading && <Heading variant="p">{subheading}</Heading>}
-        </div>
-        {children}
-      </Spacer>
+      <div className="grid grid-cols-1 gap-4">
+        <Heading variant="h1">{heading}</Heading>
+        {subheading && <Heading variant="p">{subheading}</Heading>}
+      </div>
+      {children}
     </Container>
   </div>
 );
