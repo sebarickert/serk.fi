@@ -5,7 +5,7 @@ export const socialMediaLinks = [
   },
   {
     label: "Github",
-    url: "https://github.com/serkfi",
+    url: "https://github.com/sebarickert",
   },
   {
     label: "LinkedIn",
