@@ -1,0 +1,13 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: classes } = Astro.props;
+---
+
+<div
+  class:list={["px-[clamp(1.25rem,calc(-0.061rem+5.594vw),8.75rem)]", classes]}
+>
+  <slot />
+</div>

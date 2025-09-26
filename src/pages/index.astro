@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+---
+
+<Layout>
+  <Container class="pt-36 pb-24">
+    <div class="grid gap-8 grid-cols-12">
+      <h1
+        class="font-bold text-[clamp(2.5rem,calc(2.5rem+1vw),6.375rem)] tracking-tight leading-tight text-pretty col-span-full max-2xl:max-w-[750px] 2xl:col-span-7 split"
+      >
+        <span>Frontend Wizard.</span>
+        <span class="whitespace-nowrap">CSS Tinkerer.</span>
+        <span class="whitespace-nowrap">Design Enthusiast.</span>
+      </h1>
+      <p
+        class="text-prominent text-pretty col-span-full row-start-2 max-2xl:max-w-[450px] 2xl:col-span-4 split"
+      >
+        I'm Sebastian Rickert, a Frontend Developer from Finland — I specialize
+        in creating accessible, user-friendly, and visually refined websites.
+      </p>
+    </div>
+    <div class="split mt-12">
+      <div class="inline-flex items-center gap-2 hover:underline relative">
+        <span
+          class="inline-block size-[clamp(16px,0.9vw,999px)] rounded-full bg-green-600"
+        ></span>
+        <a
+          href="mailto:sebastian@rickert.fi"
+          class="font-light leading-none focus-visible:outline-hidden focus-visible:ring-3 focus-visible:ring-green-600"
+        >
+          <span class="absolute inset-0"></span>
+          sebastian@serk.fi</a
+        >
+      </div>
+    </div>
+  </Container>
+</Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { SplitText } from "gsap/SplitText";
+  gsap.registerPlugin(SplitText);
+
+  document.fonts.ready.then(() => {
+    SplitText.create(".split", {
+      type: "lines",
+      mask: "lines",
+      onSplit(self) {
+        return gsap.from(self.lines, {
+          duration: 0.5,
+          y: 200,
+          autoAlpha: 0,
+          stagger: 0.25,
+        });
+      },
+    });
+  });
+</script>

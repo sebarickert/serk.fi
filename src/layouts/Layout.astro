@@ -1,0 +1,21 @@
+---
+import Header from "../components/Header.astro";
+import "@fontsource-variable/inter";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en" class="bg-black text-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Sebastian Rickert — Frontend Wizard</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

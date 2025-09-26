@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --font-*: initial;
+  --font-display: "Inter Variable", "sans-serif";
+}
+
+@layer base {
+  :root {
+    font-size: clamp(16px, 1vw, 999px);
+  }
+}
+
+@layer components {
+  .text-prominent {
+    font-size: clamp(1rem, 1rem + 1vw, 1.1875rem);
+    line-height: 1.375;
+  }
+}

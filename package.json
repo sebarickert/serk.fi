@@ -1,0 +1,19 @@
+{
+  "name": "serk.fi",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/vercel": "^8.2.8",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.14.1",
+    "gsap": "^3.13.0",
+    "tailwindcss": "^4.1.13"
+  }
+}
