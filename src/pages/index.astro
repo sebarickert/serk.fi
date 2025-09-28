@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
+import Testimonials from "../components/Testimonials.astro";
 ---
 
 <Layout>
@@ -34,13 +35,15 @@ import Container from "../components/Container.astro";
         >
       </div>
     </div>
+    <Testimonials class="mt-24" />
   </Container>
 </Layout>
 
 <script>
   import { gsap } from "gsap";
   import { SplitText } from "gsap/SplitText";
-  gsap.registerPlugin(SplitText);
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(SplitText, ScrollTrigger);
 
   document.fonts.ready.then(() => {
     SplitText.create(".split", {
@@ -48,10 +51,10 @@ import Container from "../components/Container.astro";
       mask: "lines",
       onSplit(self) {
         return gsap.from(self.lines, {
-          duration: 0.5,
+          duration: 0.25,
           y: 200,
           autoAlpha: 0,
-          stagger: 0.25,
+          stagger: 0.1,
         });
       },
     });

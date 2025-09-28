@@ -9,6 +9,10 @@
   :root {
     font-size: clamp(16px, 1vw, 999px);
   }
+
+  h2 {
+    font-size: clamp(1.25rem, 1.25rem + 1vw, 1.5rem);
+  }
 }
 
 @layer components {

@@ -1,0 +1,30 @@
+---
+import { getCollection, render } from "astro:content";
+import Testimonial from "./Testimonial.astro";
+
+const allTestimonials = await getCollection("testimonials");
+
+const testimonialsWithContent = await Promise.all(
+  allTestimonials.map(async (testimonial) => {
+    const { Content } = await render(testimonial);
+    return { ...testimonial, Content };
+  })
+);
+
+interface Props {
+  class?: string;
+}
+
+const { class: classes } = Astro.props;
+---
+
+<div class:list={["", classes]}>
+  <h2 class="font-bold mb-8 text-pretty split">From Those I've Worked With</h2>
+  <div class="grid gap-12 2xl:grid-cols-12">
+    {
+      testimonialsWithContent.map((testimonial) => (
+        <Testimonial class="split 2xl:col-span-6" {...testimonial} />
+      ))
+    }
+  </div>
+</div>
