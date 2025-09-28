@@ -18,17 +18,12 @@ interface Props {
 const { class: classes } = Astro.props;
 ---
 
-<div class:list={["text-center", classes]}>
-  <h2 class="text-center font-bold mb-8 lg:mb-12 text-pretty">
-    From Those I've Worked With
-  </h2>
+<div class:list={["", classes]}>
+  <h2 class="font-bold mb-8 text-pretty split">From Those I've Worked With</h2>
   <div class="grid gap-12 2xl:grid-cols-12">
     {
       testimonialsWithContent.map((testimonial) => (
-        <Testimonial
-          class="max-2xl:max-w-[700px] max-2xl:m-auto 2xl:col-span-6 2xl:col-start-4"
-          {...testimonial}
-        />
+        <Testimonial class="split 2xl:col-span-6" {...testimonial} />
       ))
     }
   </div>
